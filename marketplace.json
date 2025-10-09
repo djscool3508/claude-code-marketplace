@@ -1,0 +1,512 @@
+{
+  "name": "claude-code-marketplace",
+  "owner": {
+    "name": "Claude Code Commands Community",
+    "email": "hello@claudecodecommands.com"
+  },
+  "metadata": {
+    "description": "Community-driven marketplace for Claude Code commands and plugins",
+    "version": "1.0.0",
+    "homepage": "https://claudecodecommands.directory"
+  },
+  "plugins": [
+    {
+      "name": "lyra",
+      "source": "./plugins/lyra.md",
+      "description": "Lyra - a master-level AI prompt optimization specialist.",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "workflow"
+      ],
+      "category": "workflow",
+      "homepage": "https://claudecodecommands.directory/commands/lyra",
+      "strict": false
+    },
+    {
+      "name": "analyze-codebase",
+      "source": "./plugins/analyze-codebase.md",
+      "description": "Generate comprehensive analysis and documentation of entire codebase",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "explore",
+        "plan"
+      ],
+      "category": "explore",
+      "homepage": "https://claudecodecommands.directory/commands/analyze-codebase",
+      "strict": false
+    },
+    {
+      "name": "update-claudemd",
+      "source": "./plugins/update-claudemd.md",
+      "description": "Automatically update CLAUDE.md file based on recent code changes",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/update-claudemd",
+      "strict": false
+    },
+    {
+      "name": "ultrathink",
+      "source": "./plugins/ultrathink.md",
+      "description": "Use /ultrathink <TASK_DESCRIPTION> to launch a Coordinator Agent that directs four specialist sub-agents—Architect, Research, Coder, and Tester—to analyze, design, implement, and validate your coding task. The process breaks the task into clear steps, gathers insights, and synthesizes a cohesive solution with actionable outputs. Relevant files can be referenced ad-hoc using @ filename syntax.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeronim Morina"
+      },
+      "keywords": [
+        "plan",
+        "explore",
+        "refactoring",
+        "testing",
+        "code-review",
+        "workflow",
+        "debugging"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/ultrathink",
+      "strict": false
+    },
+    {
+      "name": "code-review",
+      "source": "./plugins/code-review.md",
+      "description": "Perform a comprehensive code review of recent changes",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/code-review",
+      "strict": false
+    },
+    {
+      "name": "refractor",
+      "source": "./plugins/refractor.md",
+      "description": "Refactor code following best practices and design patterns",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "refactoring"
+      ],
+      "category": "refactoring",
+      "homepage": "https://claudecodecommands.directory/commands/refractor",
+      "strict": false
+    },
+    {
+      "name": "audit",
+      "source": "./plugins/audit.md",
+      "description": "Perform security audit on codebase",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review",
+        "security"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/audit",
+      "strict": false
+    },
+    {
+      "name": "plan",
+      "source": "./plugins/plan.md",
+      "description": "For easy problems, start here. For harder problems, do this after Explore.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Galen Ward"
+      },
+      "keywords": [
+        "plan"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/plan",
+      "strict": false
+    },
+    {
+      "name": "claude-desktop-extension",
+      "source": "./plugins/claude-desktop-extension.md",
+      "description": "This command provides the context necessary for Claude Code to create the Desktop Extension or .dxt file of an MCP.",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "workflow"
+      ],
+      "category": "workflow",
+      "homepage": "https://claudecodecommands.directory/commands/claude-desktop-extension",
+      "strict": false
+    },
+    {
+      "name": "optimize",
+      "source": "./plugins/optimize.md",
+      "description": "Analyze and optimize code performance",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "performance"
+      ],
+      "category": "performance",
+      "homepage": "https://claudecodecommands.directory/commands/optimize",
+      "strict": false
+    },
+    {
+      "name": "commit",
+      "source": "./plugins/commit.md",
+      "description": "Creates git commits using conventional commit format with appropriate emojis, following project standards and creating descriptive messages that explain the purpose of changes.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/commit",
+      "strict": false
+    },
+    {
+      "name": "explore",
+      "source": "./plugins/explore.md",
+      "description": "Helps Claude read a planning document and explore related files to get familiar with a topic. Asking Claude to prepare to discuss seems to work better than asking it to prepare to do specific work.\n\nThis is followed by Plan, then Execute.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Galen Ward"
+      },
+      "keywords": [
+        "explore"
+      ],
+      "category": "explore",
+      "homepage": "https://claudecodecommands.directory/commands/explore",
+      "strict": false
+    },
+    {
+      "name": "generate-api-docs",
+      "source": "./plugins/generate-api-docs.md",
+      "description": "Generate API documentation for endpoints",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "documentation"
+      ],
+      "category": "documentation",
+      "homepage": "https://claudecodecommands.directory/commands/generate-api-docs",
+      "strict": false
+    },
+    {
+      "name": "debug-session",
+      "source": "./plugins/debug-session.md",
+      "description": "Ask Claude Code to help you debug an issue",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "debugging"
+      ],
+      "category": "debugging",
+      "homepage": "https://claudecodecommands.directory/commands/debug-session",
+      "strict": false
+    },
+    {
+      "name": "test-file",
+      "source": "./plugins/test-file.md",
+      "description": "Generate comprehensive tests for a specific file",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "testing"
+      ],
+      "category": "testing",
+      "homepage": "https://claudecodecommands.directory/commands/test-file",
+      "strict": false
+    },
+    {
+      "name": "double-check",
+      "source": "./plugins/double-check.md",
+      "description": "An easy way to force agent to think again if it's statement that the \"Job is done and production ready\" is actually done - usually it's not. Thanks to this command you don't have to check after the agent if they did their job.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Robert S"
+      },
+      "keywords": [
+        "plan",
+        "code-review",
+        "workflow"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/double-check",
+      "strict": false
+    },
+    {
+      "name": "create-worktrees",
+      "source": "./plugins/create-worktrees.md",
+      "description": "Creates git worktrees for all open PRs or specific branches, handling branches with slashes, cleaning up stale worktrees, and supporting custom branch creation for development.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-worktrees",
+      "strict": false
+    },
+    {
+      "name": "pr-review",
+      "source": "./plugins/pr-review.md",
+      "description": "Reviews pull request changes to provide feedback, check for issues, and suggest improvements before merging into the main codebase.",
+      "version": "1.0.0",
+      "author": {
+        "name": "arkavo-org",
+        "url": "https://github.com/arkavo-org"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/pr-review",
+      "strict": false
+    },
+    {
+      "name": "analyze-issue",
+      "source": "./plugins/analyze-issue.md",
+      "description": "Fetches GitHub issue details to create comprehensive implementation specifications, analyzing requirements and planning structured approach with clear implementation steps.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/analyze-issue",
+      "strict": false
+    },
+    {
+      "name": "update-branch-name",
+      "source": "./plugins/update-branch-name.md",
+      "description": "Updates branch names with proper prefixes and formats, enforcing naming conventions, supporting semantic prefixes, and managing remote branch updates.",
+      "version": "1.0.0",
+      "author": {
+        "name": "giselles-ai",
+        "url": "https://github.com/giselles-ai"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/update-branch-name",
+      "strict": false
+    },
+    {
+      "name": "discuss",
+      "source": "./plugins/discuss.md",
+      "description": "Collaborative technical discussion with proactive requirements gathering",
+      "version": "1.0.0",
+      "author": {
+        "name": "Bohdan Triapitsyn"
+      },
+      "keywords": [
+        "plan"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/discuss",
+      "strict": false
+    },
+    {
+      "name": "bug-fix",
+      "source": "./plugins/bug-fix.md",
+      "description": "Streamlines bug fixing by creating a GitHub issue first, then a feature branch for implementing and thoroughly testing the solution before merging.",
+      "version": "1.0.0",
+      "author": {
+        "name": "danielscholl",
+        "url": "https://github.com/danielscholl"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/bug-fix",
+      "strict": false
+    },
+    {
+      "name": "openapi-expert",
+      "source": "./plugins/openapi-expert.md",
+      "description": "Use this agent to update, synchronize, or validate the OpenAPI specification (openapi.yml) against the actual REST API implementation. This includes adding new endpoints, updating request/response schemas, fixing discrepancies between the spec and code, or ensuring complete API documentation coverage.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Meiring de Wet"
+      },
+      "keywords": [
+        "documentation",
+        "openapi",
+        "workflow"
+      ],
+      "category": "documentation",
+      "homepage": "https://claudecodecommands.directory/commands/openapi-expert",
+      "strict": false
+    },
+    {
+      "name": "create-pull-request",
+      "source": "./plugins/create-pull-request.md",
+      "description": "Provides comprehensive PR creation guidance with GitHub CLI, enforcing title conventions, following template structure, and offering concrete command examples with best practices.",
+      "version": "1.0.0",
+      "author": {
+        "name": "liam-hq",
+        "url": "https://github.com/liam-hq"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-pull-request",
+      "strict": false
+    },
+    {
+      "name": "create-pr",
+      "source": "./plugins/create-pr.md",
+      "description": "Streamlines pull request creation by handling the entire workflow: creating a new branch, committing changes, formatting modified files with Biome, and submitting the PR.",
+      "version": "1.0.0",
+      "author": {
+        "name": "toyamarinyon",
+        "url": "https://github.com/toyamarinyon"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-pr",
+      "strict": false
+    },
+    {
+      "name": "fix-github-issue",
+      "source": "./plugins/fix-github-issue.md",
+      "description": "Analyzes and fixes GitHub issues using a structured approach with GitHub CLI for issue details, implementing necessary code changes, running tests, and creating proper commit messages.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jeremymailen",
+        "url": "https://github.com/jeremymailen"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-github-issue",
+      "strict": false
+    },
+    {
+      "name": "fix-issue",
+      "source": "./plugins/fix-issue.md",
+      "description": "Addresses GitHub issues by taking issue number as parameter, analyzing context, implementing solution, and testing/validating the fix for proper integration.",
+      "version": "1.0.0",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-issue",
+      "strict": false
+    },
+    {
+      "name": "husky",
+      "source": "./plugins/husky.md",
+      "description": "Sets up and manages Husky Git hooks by configuring pre-commit hooks, establishing commit message standards, integrating with linting tools, and ensuring code quality on commits.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/husky",
+      "strict": false
+    },
+    {
+      "name": "fix-pr",
+      "source": "./plugins/fix-pr.md",
+      "description": "Fetches and fixes unresolved PR comments by automatically retrieving feedback, addressing reviewer concerns, making targeted code improvements, and streamlining the review process.",
+      "version": "1.0.0",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-pr",
+      "strict": false
+    },
+    {
+      "name": "2-commit-fast",
+      "source": "./plugins/2-commit-fast.md",
+      "description": "Automates git commit process by selecting the first suggested message, generating structured commits with consistent formatting while skipping manual confirmation and removing Claude co-Contributorship footer",
+      "version": "1.0.0",
+      "author": {
+        "name": "steadycursor",
+        "url": "https://github.com/steadycursor"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/2-commit-fast",
+      "strict": false
+    },
+    {
+      "name": "pr-issue-resolve",
+      "source": "./plugins/pr-issue-resolve.md",
+      "description": "this is to analyze the PRs and solve the requested changes in them\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "safayavatsal"
+      },
+      "keywords": [
+        "code-review",
+        "testing",
+        "refactoring",
+        "debugging",
+        "security",
+        "performance"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/pr-issue-resolve",
+      "strict": false
+    },
+    {
+      "name": "github-issue-fix",
+      "source": "./plugins/github-issue-fix.md",
+      "description": "This is a detailed way you can analyze the GitHub issues and let Claude handle them in best possible way.",
+      "version": "1.0.0",
+      "author": {
+        "name": "safayavatsal"
+      },
+      "keywords": [
+        "debugging",
+        "refactoring",
+        "testing",
+        "security"
+      ],
+      "category": "debugging",
+      "homepage": "https://claudecodecommands.directory/commands/github-issue-fix",
+      "strict": false
+    }
+  ]
+}
