@@ -1,0 +1,13 @@
+{
+  "name": "changelog-generator",
+  "description": "Changelog Generator subagent",
+  "version": "1.0.0",
+  "author": {
+    "name": "Joe Heitzeberg"
+  },
+  "category": "agents",
+  "homepage": "https://claudecodecommands.directory/agents/changelog-generator",
+  "keywords": [
+    "subagent"
+  ]
+}

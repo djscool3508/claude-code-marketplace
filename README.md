@@ -10,17 +10,27 @@ Add this marketplace to Claude Code:
 /plugin marketplace add ananddtyagi/claude-code-marketplace
 ```
 
-Then browse and install commands:
+Then browse and install individual plugins (commands or agents):
 
 ```bash
 /plugin
 ```
 
+Install a specific command:
+```bash
+/plugin install lyra@claude-code-marketplace
+```
+
+Install a specific agent:
+```bash
+/plugin install accessibility-expert@claude-code-marketplace
+```
+
 ## 📊 Stats
 
-- **Total Commands**: 35
-- **Categories**: 10
-- **Contributors**: 17
+- **Total Plugins**: 113 (35 commands + 78 agents)
+- **Categories**: 10+
+- **Contributors**: 17+
 
 ## 🌟 Featured Commands
 
@@ -35,16 +45,35 @@ Then browse and install commands:
 - **Bug Detective** - Systematically debug issues with step-by-step troubleshooting approaches. (by Anonymous)
 - **Audit** - Perform security audit on codebase (by [@ananddtyagi](https://github.com/ananddtyagi))
 
-[View all 35 commands →](https://claudecodecommands.directory)
+[View all 113 plugins →](https://claudecodecommands.directory)
+
+## 🤖 Featured Agents
+
+- **Accessibility Expert** - Specialized agent for accessibility reviews and improvements
+- **AI Engineer** - Expert in AI/ML implementation and optimization
+- **Frontend Developer** - React, Vue, Angular expert for UI development
+- **DevOps Automator** - CI/CD and infrastructure automation specialist
+- **Code Reviewer** - Thorough code review and best practices enforcement
+
+[View all 78 agents →](https://claudecodecommands.directory)
 
 ## 💡 Browse & Submit
 
 Visit **[claudecodecommands.directory](https://claudecodecommands.directory)** to:
 
-- 🔍 Browse all commands with descriptions and examples
-- 📤 Submit your own commands
-- ⭐ Favorite commands
+- 🔍 Browse all commands and agents with descriptions and examples
+- 📤 Submit your own commands and agents
+- ⭐ Favorite plugins
 - 🏷️ Filter by category and tags
+
+## 🎯 How It Works
+
+Each plugin in this marketplace is **independently installable**:
+
+- **Commands**: Add custom slash commands to your Claude Code workflow (e.g., `/lyra`, `/audit`, `/ultrathink`)
+- **Agents**: Add specialized AI agents with specific expertise (e.g., accessibility-expert, frontend-developer, devops-automator)
+
+Install only what you need - no bloat, full granular control!
 
 ## 🔄 Auto-Sync
 
