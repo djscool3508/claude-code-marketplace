@@ -1,15 +1,303 @@
 {
   "name": "claude-code-marketplace",
   "owner": {
-    "name": "Claude Code Commands & Subagents Community",
+    "name": "Claude Code Commands Community",
     "email": "hello@claudecodecommands.com"
   },
   "metadata": {
-    "description": "Community-driven marketplace for Claude Code commands and AI subagents",
-    "version": "2.0.0",
+    "description": "Community-driven marketplace for Claude Code commands and plugins",
+    "version": "1.0.0",
     "homepage": "https://claudecodecommands.directory"
   },
   "plugins": [
+    {
+      "name": "documentation-generator",
+      "source": "./plugins/documentation-generator.md",
+      "description": "Create comprehensive documentation for code, APIs, and projects.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anonymous"
+      },
+      "keywords": [
+        "documentation"
+      ],
+      "category": "documentation",
+      "homepage": "https://claudecodecommands.directory/commands/documentation-generator",
+      "strict": false
+    },
+    {
+      "name": "lyra",
+      "source": "./plugins/lyra.md",
+      "description": "Lyra - a master-level AI prompt optimization specialist.",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "workflow"
+      ],
+      "category": "workflow",
+      "homepage": "https://claudecodecommands.directory/commands/lyra",
+      "strict": false
+    },
+    {
+      "name": "analyze-codebase",
+      "source": "./plugins/analyze-codebase.md",
+      "description": "Generate comprehensive analysis and documentation of entire codebase",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "explore",
+        "plan"
+      ],
+      "category": "explore",
+      "homepage": "https://claudecodecommands.directory/commands/analyze-codebase",
+      "strict": false
+    },
+    {
+      "name": "update-claudemd",
+      "source": "./plugins/update-claudemd.md",
+      "description": "Automatically update CLAUDE.md file based on recent code changes",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/update-claudemd",
+      "strict": false
+    },
+    {
+      "name": "ultrathink",
+      "source": "./plugins/ultrathink.md",
+      "description": "Use /ultrathink <TASK_DESCRIPTION> to launch a Coordinator Agent that directs four specialist sub-agents—Architect, Research, Coder, and Tester—to analyze, design, implement, and validate your coding task. The process breaks the task into clear steps, gathers insights, and synthesizes a cohesive solution with actionable outputs. Relevant files can be referenced ad-hoc using @ filename syntax.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jeronim Morina"
+      },
+      "keywords": [
+        "plan",
+        "explore",
+        "refactoring",
+        "testing",
+        "code-review",
+        "workflow",
+        "debugging"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/ultrathink",
+      "strict": false
+    },
+    {
+      "name": "code-review",
+      "source": "./plugins/code-review.md",
+      "description": "Perform a comprehensive code review of recent changes",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/code-review",
+      "strict": false
+    },
+    {
+      "name": "refractor",
+      "source": "./plugins/refractor.md",
+      "description": "Refactor code following best practices and design patterns",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "refactoring"
+      ],
+      "category": "refactoring",
+      "homepage": "https://claudecodecommands.directory/commands/refractor",
+      "strict": false
+    },
+    {
+      "name": "code-review-assistant",
+      "source": "./plugins/code-review-assistant.md",
+      "description": "Get comprehensive code reviews with suggestions for improvements, best practices, and potential issues.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anonymous"
+      },
+      "keywords": [
+        "code-review"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/code-review-assistant",
+      "strict": false
+    },
+    {
+      "name": "bug-detective",
+      "source": "./plugins/bug-detective.md",
+      "description": "Systematically debug issues with step-by-step troubleshooting approaches.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anonymous"
+      },
+      "keywords": [
+        "debugging"
+      ],
+      "category": "debugging",
+      "homepage": "https://claudecodecommands.directory/commands/bug-detective",
+      "strict": false
+    },
+    {
+      "name": "audit",
+      "source": "./plugins/audit.md",
+      "description": "Perform security audit on codebase",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "code-review",
+        "security"
+      ],
+      "category": "code-review",
+      "homepage": "https://claudecodecommands.directory/commands/audit",
+      "strict": false
+    },
+    {
+      "name": "plan",
+      "source": "./plugins/plan.md",
+      "description": "For easy problems, start here. For harder problems, do this after Explore.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Galen Ward"
+      },
+      "keywords": [
+        "plan"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/plan",
+      "strict": false
+    },
+    {
+      "name": "claude-desktop-extension",
+      "source": "./plugins/claude-desktop-extension.md",
+      "description": "This command provides the context necessary for Claude Code to create the Desktop Extension or .dxt file of an MCP.",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "workflow"
+      ],
+      "category": "workflow",
+      "homepage": "https://claudecodecommands.directory/commands/claude-desktop-extension",
+      "strict": false
+    },
+    {
+      "name": "optimize",
+      "source": "./plugins/optimize.md",
+      "description": "Analyze and optimize code performance",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "performance"
+      ],
+      "category": "performance",
+      "homepage": "https://claudecodecommands.directory/commands/optimize",
+      "strict": false
+    },
+    {
+      "name": "commit",
+      "source": "./plugins/commit.md",
+      "description": "Creates git commits using conventional commit format with appropriate emojis, following project standards and creating descriptive messages that explain the purpose of changes.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/commit",
+      "strict": false
+    },
+    {
+      "name": "explore",
+      "source": "./plugins/explore.md",
+      "description": "Helps Claude read a planning document and explore related files to get familiar with a topic. Asking Claude to prepare to discuss seems to work better than asking it to prepare to do specific work.\n\nThis is followed by Plan, then Execute.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Galen Ward"
+      },
+      "keywords": [
+        "explore"
+      ],
+      "category": "explore",
+      "homepage": "https://claudecodecommands.directory/commands/explore",
+      "strict": false
+    },
+    {
+      "name": "generate-api-docs",
+      "source": "./plugins/generate-api-docs.md",
+      "description": "Generate API documentation for endpoints",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "documentation"
+      ],
+      "category": "documentation",
+      "homepage": "https://claudecodecommands.directory/commands/generate-api-docs",
+      "strict": false
+    },
+    {
+      "name": "debug-session",
+      "source": "./plugins/debug-session.md",
+      "description": "Ask Claude Code to help you debug an issue",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "debugging"
+      ],
+      "category": "debugging",
+      "homepage": "https://claudecodecommands.directory/commands/debug-session",
+      "strict": false
+    },
+    {
+      "name": "test-file",
+      "source": "./plugins/test-file.md",
+      "description": "Generate comprehensive tests for a specific file",
+      "version": "1.0.0",
+      "author": {
+        "name": " Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "keywords": [
+        "testing"
+      ],
+      "category": "testing",
+      "homepage": "https://claudecodecommands.directory/commands/test-file",
+      "strict": false
+    },
     {
       "name": "double-check",
       "source": "./plugins/double-check.md",
@@ -25,6 +313,206 @@
       ],
       "category": "plan",
       "homepage": "https://claudecodecommands.directory/commands/double-check",
+      "strict": false
+    },
+    {
+      "name": "create-worktrees",
+      "source": "./plugins/create-worktrees.md",
+      "description": "Creates git worktrees for all open PRs or specific branches, handling branches with slashes, cleaning up stale worktrees, and supporting custom branch creation for development.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-worktrees",
+      "strict": false
+    },
+    {
+      "name": "pr-review",
+      "source": "./plugins/pr-review.md",
+      "description": "Reviews pull request changes to provide feedback, check for issues, and suggest improvements before merging into the main codebase.",
+      "version": "1.0.0",
+      "author": {
+        "name": "arkavo-org",
+        "url": "https://github.com/arkavo-org"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/pr-review",
+      "strict": false
+    },
+    {
+      "name": "update-branch-name",
+      "source": "./plugins/update-branch-name.md",
+      "description": "Updates branch names with proper prefixes and formats, enforcing naming conventions, supporting semantic prefixes, and managing remote branch updates.",
+      "version": "1.0.0",
+      "author": {
+        "name": "giselles-ai",
+        "url": "https://github.com/giselles-ai"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/update-branch-name",
+      "strict": false
+    },
+    {
+      "name": "analyze-issue",
+      "source": "./plugins/analyze-issue.md",
+      "description": "Fetches GitHub issue details to create comprehensive implementation specifications, analyzing requirements and planning structured approach with clear implementation steps.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jerseycheese",
+        "url": "https://github.com/jerseycheese"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/analyze-issue",
+      "strict": false
+    },
+    {
+      "name": "discuss",
+      "source": "./plugins/discuss.md",
+      "description": "Collaborative technical discussion with proactive requirements gathering",
+      "version": "1.0.0",
+      "author": {
+        "name": "Bohdan Triapitsyn"
+      },
+      "keywords": [
+        "plan"
+      ],
+      "category": "plan",
+      "homepage": "https://claudecodecommands.directory/commands/discuss",
+      "strict": false
+    },
+    {
+      "name": "bug-fix",
+      "source": "./plugins/bug-fix.md",
+      "description": "Streamlines bug fixing by creating a GitHub issue first, then a feature branch for implementing and thoroughly testing the solution before merging.",
+      "version": "1.0.0",
+      "author": {
+        "name": "danielscholl",
+        "url": "https://github.com/danielscholl"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/bug-fix",
+      "strict": false
+    },
+    {
+      "name": "openapi-expert",
+      "source": "./plugins/openapi-expert.md",
+      "description": "Use this agent to update, synchronize, or validate the OpenAPI specification (openapi.yml) against the actual REST API implementation. This includes adding new endpoints, updating request/response schemas, fixing discrepancies between the spec and code, or ensuring complete API documentation coverage.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Meiring de Wet"
+      },
+      "keywords": [
+        "documentation",
+        "openapi",
+        "workflow"
+      ],
+      "category": "documentation",
+      "homepage": "https://claudecodecommands.directory/commands/openapi-expert",
+      "strict": false
+    },
+    {
+      "name": "create-pr",
+      "source": "./plugins/create-pr.md",
+      "description": "Streamlines pull request creation by handling the entire workflow: creating a new branch, committing changes, formatting modified files with Biome, and submitting the PR.",
+      "version": "1.0.0",
+      "author": {
+        "name": "toyamarinyon",
+        "url": "https://github.com/toyamarinyon"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-pr",
+      "strict": false
+    },
+    {
+      "name": "create-pull-request",
+      "source": "./plugins/create-pull-request.md",
+      "description": "Provides comprehensive PR creation guidance with GitHub CLI, enforcing title conventions, following template structure, and offering concrete command examples with best practices.",
+      "version": "1.0.0",
+      "author": {
+        "name": "liam-hq",
+        "url": "https://github.com/liam-hq"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/create-pull-request",
+      "strict": false
+    },
+    {
+      "name": "fix-github-issue",
+      "source": "./plugins/fix-github-issue.md",
+      "description": "Analyzes and fixes GitHub issues using a structured approach with GitHub CLI for issue details, implementing necessary code changes, running tests, and creating proper commit messages.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jeremymailen",
+        "url": "https://github.com/jeremymailen"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-github-issue",
+      "strict": false
+    },
+    {
+      "name": "fix-issue",
+      "source": "./plugins/fix-issue.md",
+      "description": "Addresses GitHub issues by taking issue number as parameter, analyzing context, implementing solution, and testing/validating the fix for proper integration.",
+      "version": "1.0.0",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-issue",
+      "strict": false
+    },
+    {
+      "name": "fix-pr",
+      "source": "./plugins/fix-pr.md",
+      "description": "Fetches and fixes unresolved PR comments by automatically retrieving feedback, addressing reviewer concerns, making targeted code improvements, and streamlining the review process.",
+      "version": "1.0.0",
+      "author": {
+        "name": "metabase",
+        "url": "https://github.com/metabase"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/fix-pr",
+      "strict": false
+    },
+    {
+      "name": "husky",
+      "source": "./plugins/husky.md",
+      "description": "Sets up and manages Husky Git hooks by configuring pre-commit hooks, establishing commit message standards, integrating with linting tools, and ensuring code quality on commits.",
+      "version": "1.0.0",
+      "author": {
+        "name": "evmts",
+        "url": "https://github.com/evmts"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/husky",
+      "strict": false
+    },
+    {
+      "name": "2-commit-fast",
+      "source": "./plugins/2-commit-fast.md",
+      "description": "Automates git commit process by selecting the first suggested message, generating structured commits with consistent formatting while skipping manual confirmation and removing Claude co-Contributorship footer",
+      "version": "1.0.0",
+      "author": {
+        "name": "steadycursor",
+        "url": "https://github.com/steadycursor"
+      },
+      "keywords": [],
+      "category": "general",
+      "homepage": "https://claudecodecommands.directory/commands/2-commit-fast",
       "strict": false
     },
     {
@@ -64,1737 +552,6 @@
       "category": "debugging",
       "homepage": "https://claudecodecommands.directory/commands/github-issue-fix",
       "strict": false
-    },
-    {
-      "name": "discuss",
-      "source": "./plugins/discuss.md",
-      "description": "Collaborative technical discussion with proactive requirements gathering",
-      "version": "1.0.0",
-      "author": {
-        "name": "Bohdan Triapitsyn"
-      },
-      "keywords": [
-        "plan"
-      ],
-      "category": "plan",
-      "homepage": "https://claudecodecommands.directory/commands/discuss",
-      "strict": false
-    },
-    {
-      "name": "openapi-expert",
-      "source": "./plugins/openapi-expert.md",
-      "description": "Use this agent to update, synchronize, or validate the OpenAPI specification (openapi.yml) against the actual REST API implementation. This includes adding new endpoints, updating request/response schemas, fixing discrepancies between the spec and code, or ensuring complete API documentation coverage.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Meiring de Wet"
-      },
-      "keywords": [
-        "documentation",
-        "openapi",
-        "workflow"
-      ],
-      "category": "documentation",
-      "homepage": "https://claudecodecommands.directory/commands/openapi-expert",
-      "strict": false
-    },
-    {
-      "name": "ultrathink",
-      "source": "./plugins/ultrathink.md",
-      "description": "Use /ultrathink <TASK_DESCRIPTION> to launch a Coordinator Agent that directs four specialist sub-agents—Architect, Research, Coder, and Tester—to analyze, design, implement, and validate your coding task. The process breaks the task into clear steps, gathers insights, and synthesizes a cohesive solution with actionable outputs. Relevant files can be referenced ad-hoc using @ filename syntax.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Jeronim Morina"
-      },
-      "keywords": [
-        "plan",
-        "explore",
-        "refactoring",
-        "testing",
-        "code-review",
-        "workflow",
-        "debugging"
-      ],
-      "category": "plan",
-      "homepage": "https://claudecodecommands.directory/commands/ultrathink",
-      "strict": false
-    },
-    {
-      "name": "lyra",
-      "source": "./plugins/lyra.md",
-      "description": "Lyra - a master-level AI prompt optimization specialist.",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "workflow"
-      ],
-      "category": "workflow",
-      "homepage": "https://claudecodecommands.directory/commands/lyra",
-      "strict": false
-    },
-    {
-      "name": "claude-desktop-extension",
-      "source": "./plugins/claude-desktop-extension.md",
-      "description": "This command provides the context necessary for Claude Code to create the Desktop Extension or .dxt file of an MCP.",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "workflow"
-      ],
-      "category": "workflow",
-      "homepage": "https://claudecodecommands.directory/commands/claude-desktop-extension",
-      "strict": false
-    },
-    {
-      "name": "update-branch-name",
-      "source": "./plugins/update-branch-name.md",
-      "description": "Updates branch names with proper prefixes and formats, enforcing naming conventions, supporting semantic prefixes, and managing remote branch updates.",
-      "version": "1.0.0",
-      "author": {
-        "name": "giselles-ai",
-        "url": "https://github.com/giselles-ai"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/update-branch-name",
-      "strict": false
-    },
-    {
-      "name": "pr-review",
-      "source": "./plugins/pr-review.md",
-      "description": "Reviews pull request changes to provide feedback, check for issues, and suggest improvements before merging into the main codebase.",
-      "version": "1.0.0",
-      "author": {
-        "name": "arkavo-org",
-        "url": "https://github.com/arkavo-org"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/pr-review",
-      "strict": false
-    },
-    {
-      "name": "bug-fix",
-      "source": "./plugins/bug-fix.md",
-      "description": "Streamlines bug fixing by creating a GitHub issue first, then a feature branch for implementing and thoroughly testing the solution before merging.",
-      "version": "1.0.0",
-      "author": {
-        "name": "danielscholl",
-        "url": "https://github.com/danielscholl"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/bug-fix",
-      "strict": false
-    },
-    {
-      "name": "analyze-issue",
-      "source": "./plugins/analyze-issue.md",
-      "description": "Fetches GitHub issue details to create comprehensive implementation specifications, analyzing requirements and planning structured approach with clear implementation steps.",
-      "version": "1.0.0",
-      "author": {
-        "name": "jerseycheese",
-        "url": "https://github.com/jerseycheese"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/analyze-issue",
-      "strict": false
-    },
-    {
-      "name": "husky",
-      "source": "./plugins/husky.md",
-      "description": "Sets up and manages Husky Git hooks by configuring pre-commit hooks, establishing commit message standards, integrating with linting tools, and ensuring code quality on commits.",
-      "version": "1.0.0",
-      "author": {
-        "name": "evmts",
-        "url": "https://github.com/evmts"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/husky",
-      "strict": false
-    },
-    {
-      "name": "fix-pr",
-      "source": "./plugins/fix-pr.md",
-      "description": "Fetches and fixes unresolved PR comments by automatically retrieving feedback, addressing reviewer concerns, making targeted code improvements, and streamlining the review process.",
-      "version": "1.0.0",
-      "author": {
-        "name": "metabase",
-        "url": "https://github.com/metabase"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/fix-pr",
-      "strict": false
-    },
-    {
-      "name": "fix-issue",
-      "source": "./plugins/fix-issue.md",
-      "description": "Addresses GitHub issues by taking issue number as parameter, analyzing context, implementing solution, and testing/validating the fix for proper integration.",
-      "version": "1.0.0",
-      "author": {
-        "name": "metabase",
-        "url": "https://github.com/metabase"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/fix-issue",
-      "strict": false
-    },
-    {
-      "name": "fix-github-issue",
-      "source": "./plugins/fix-github-issue.md",
-      "description": "Analyzes and fixes GitHub issues using a structured approach with GitHub CLI for issue details, implementing necessary code changes, running tests, and creating proper commit messages.",
-      "version": "1.0.0",
-      "author": {
-        "name": "jeremymailen",
-        "url": "https://github.com/jeremymailen"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/fix-github-issue",
-      "strict": false
-    },
-    {
-      "name": "create-worktrees",
-      "source": "./plugins/create-worktrees.md",
-      "description": "Creates git worktrees for all open PRs or specific branches, handling branches with slashes, cleaning up stale worktrees, and supporting custom branch creation for development.",
-      "version": "1.0.0",
-      "author": {
-        "name": "evmts",
-        "url": "https://github.com/evmts"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/create-worktrees",
-      "strict": false
-    },
-    {
-      "name": "create-pull-request",
-      "source": "./plugins/create-pull-request.md",
-      "description": "Provides comprehensive PR creation guidance with GitHub CLI, enforcing title conventions, following template structure, and offering concrete command examples with best practices.",
-      "version": "1.0.0",
-      "author": {
-        "name": "liam-hq",
-        "url": "https://github.com/liam-hq"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/create-pull-request",
-      "strict": false
-    },
-    {
-      "name": "create-pr",
-      "source": "./plugins/create-pr.md",
-      "description": "Streamlines pull request creation by handling the entire workflow: creating a new branch, committing changes, formatting modified files with Biome, and submitting the PR.",
-      "version": "1.0.0",
-      "author": {
-        "name": "toyamarinyon",
-        "url": "https://github.com/toyamarinyon"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/create-pr",
-      "strict": false
-    },
-    {
-      "name": "commit",
-      "source": "./plugins/commit.md",
-      "description": "Creates git commits using conventional commit format with appropriate emojis, following project standards and creating descriptive messages that explain the purpose of changes.",
-      "version": "1.0.0",
-      "author": {
-        "name": "evmts",
-        "url": "https://github.com/evmts"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/commit",
-      "strict": false
-    },
-    {
-      "name": "2-commit-fast",
-      "source": "./plugins/2-commit-fast.md",
-      "description": "Automates git commit process by selecting the first suggested message, generating structured commits with consistent formatting while skipping manual confirmation and removing Claude co-Contributorship footer",
-      "version": "1.0.0",
-      "author": {
-        "name": "steadycursor",
-        "url": "https://github.com/steadycursor"
-      },
-      "keywords": [],
-      "category": "general",
-      "homepage": "https://claudecodecommands.directory/commands/2-commit-fast",
-      "strict": false
-    },
-    {
-      "name": "update-claudemd",
-      "source": "./plugins/update-claudemd.md",
-      "description": "Automatically update CLAUDE.md file based on recent code changes",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "code-review"
-      ],
-      "category": "code-review",
-      "homepage": "https://claudecodecommands.directory/commands/update-claudemd",
-      "strict": false
-    },
-    {
-      "name": "analyze-codebase",
-      "source": "./plugins/analyze-codebase.md",
-      "description": "Generate comprehensive analysis and documentation of entire codebase",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "explore",
-        "plan"
-      ],
-      "category": "explore",
-      "homepage": "https://claudecodecommands.directory/commands/analyze-codebase",
-      "strict": false
-    },
-    {
-      "name": "plan",
-      "source": "./plugins/plan.md",
-      "description": "For easy problems, start here. For harder problems, do this after Explore.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Galen Ward"
-      },
-      "keywords": [
-        "plan"
-      ],
-      "category": "plan",
-      "homepage": "https://claudecodecommands.directory/commands/plan",
-      "strict": false
-    },
-    {
-      "name": "explore",
-      "source": "./plugins/explore.md",
-      "description": "Helps Claude read a planning document and explore related files to get familiar with a topic. Asking Claude to prepare to discuss seems to work better than asking it to prepare to do specific work.\n\nThis is followed by Plan, then Execute.",
-      "version": "1.0.0",
-      "author": {
-        "name": "Galen Ward"
-      },
-      "keywords": [
-        "explore"
-      ],
-      "category": "explore",
-      "homepage": "https://claudecodecommands.directory/commands/explore",
-      "strict": false
-    },
-    {
-      "name": "optimize",
-      "source": "./plugins/optimize.md",
-      "description": "Analyze and optimize code performance",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "performance"
-      ],
-      "category": "performance",
-      "homepage": "https://claudecodecommands.directory/commands/optimize",
-      "strict": false
-    },
-    {
-      "name": "audit",
-      "source": "./plugins/audit.md",
-      "description": "Perform security audit on codebase",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "code-review",
-        "security"
-      ],
-      "category": "code-review",
-      "homepage": "https://claudecodecommands.directory/commands/audit",
-      "strict": false
-    },
-    {
-      "name": "refractor",
-      "source": "./plugins/refractor.md",
-      "description": "Refactor code following best practices and design patterns",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "refactoring"
-      ],
-      "category": "refactoring",
-      "homepage": "https://claudecodecommands.directory/commands/refractor",
-      "strict": false
-    },
-    {
-      "name": "debug-session",
-      "source": "./plugins/debug-session.md",
-      "description": "Ask Claude Code to help you debug an issue",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "debugging"
-      ],
-      "category": "debugging",
-      "homepage": "https://claudecodecommands.directory/commands/debug-session",
-      "strict": false
-    },
-    {
-      "name": "generate-api-docs",
-      "source": "./plugins/generate-api-docs.md",
-      "description": "Generate API documentation for endpoints",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "documentation"
-      ],
-      "category": "documentation",
-      "homepage": "https://claudecodecommands.directory/commands/generate-api-docs",
-      "strict": false
-    },
-    {
-      "name": "test-file",
-      "source": "./plugins/test-file.md",
-      "description": "Generate comprehensive tests for a specific file",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://claudecodecommands.directory/commands/test-file",
-      "strict": false
-    },
-    {
-      "name": "code-review",
-      "source": "./plugins/code-review.md",
-      "description": "Perform a comprehensive code review of recent changes",
-      "version": "1.0.0",
-      "author": {
-        "name": " Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "keywords": [
-        "code-review"
-      ],
-      "category": "code-review",
-      "homepage": "https://claudecodecommands.directory/commands/code-review",
-      "strict": false
-    },
-    {
-      "name": "unit-test-generator",
-      "source": "./agents/unit-test-generator.md",
-      "description": "Expert Flutter/Dart unit test specialist that systematically improves test coverage using automated workflows with strict validation, git management, and Aurigo corporate standards. Use for comprehensive test suite creation and coverage improvement.",
-      "author": {
-        "name": "Anonymous"
-      },
-      "keywords": [
-        "flutter",
-        "unit-test",
-        "testing",
-        "prompts",
-        "mcp",
-        "architecture",
-        "mobile",
-        "integration",
-        "engineering"
-      ],
-      "category": "flutter",
-      "homepage": "https://subagents.cc/agents/unit-test-generator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "desktop-app-dev",
-      "source": "./agents/desktop-app-dev.md",
-      "description": "Use this agent when you need expert assistance with desktop app development tasks including code analysis, component creation, debugging, performance optimization, or architectural decisions.",
-      "author": {
-        "name": "safayavatsal"
-      },
-      "keywords": [
-        "engineering",
-        "desktop"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/desktop-app-dev",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "web-dev",
-      "source": "./agents/web-dev.md",
-      "description": "Use this agent when you need expert assistance with web development tasks including code analysis, component creation, debugging, performance optimization, or architectural decisions.",
-      "author": {
-        "name": "safayavatsal"
-      },
-      "keywords": [
-        "web",
-        "engineering"
-      ],
-      "category": "web",
-      "homepage": "https://subagents.cc/agents/web-dev",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "flutter-mobile-app-dev",
-      "source": "./agents/flutter-mobile-app-dev.md",
-      "description": "Use this agent when you need expert assistance with Flutter mobile development tasks including code analysis, component creation, debugging, performance optimization, or architectural decisions.",
-      "author": {
-        "name": "safayavatsal"
-      },
-      "keywords": [
-        "mobile",
-        "engineering"
-      ],
-      "category": "mobile",
-      "homepage": "https://subagents.cc/agents/flutter-mobile-app-dev",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "vision-specialist",
-      "source": "./agents/vision-specialist.md",
-      "description": "The Vision Specialist is an expert in visual AI who stays current with the latest vision models (GPT-4V, Claude Vision, Mistral-OCR, etc.), OCR systems, and barcode detection libraries, providing optimized implementations with preprocessing pipelines, prompt engineering techniques, and cost-effective strategies to extract maximum performance from visual processing tasks like document analysis, image recognition, and structured data extraction.",
-      "author": {
-        "name": "alanKerrigan"
-      },
-      "keywords": [
-        "engineering",
-        "integration",
-        "vision-",
-        "computer-vision",
-        "ocr-",
-        "ai-models",
-        "machine-learning",
-        "image-processing",
-        "barcodes"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/vision-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "project-curator",
-      "source": "./agents/project-curator.md",
-      "description": "The Project Curator systematically transforms cluttered, disorganized codebases into clean, well-structured projects by moving files from the root directory into logical folder hierarchies (like /src/, /docs/, /config/), while intelligently tracking all dependencies and automatically updating import paths, configuration references, and build scripts to prevent anything from breaking during the reorganization process.",
-      "author": {
-        "name": "alanKerrigan"
-      },
-      "keywords": [
-        "engineering",
-        "architecture",
-        "project-management",
-        "organization-",
-        "cleanup-",
-        "refactoring-"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/project-curator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "planning-prd-agent",
-      "source": "./agents/planning-prd-agent.md",
-      "description": "The Technical Planning & PRD Generation Agent is an expert system that acts as a Technical Project Manager with deep software engineering knowledge. It creates comprehensive Product Requirement Documents (PRDs) and task assignments for technical projects, ensuring clarity and developer-friendliness.",
-      "author": {
-        "name": "clouddna-au"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/planning-prd-agent",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "ceo-quality-controller-agent",
-      "source": "./agents/ceo-quality-controller-agent.md",
-      "description": "description: Universal quality control orchestrator and final authority for any software development project. Dynamically discovers and coordinates with available sub-agents, performs comprehensive multi-dimensional quality assessment, security validation, and deployment readiness verification. Adapts to any project type, programming language, or development framework while maintaining enterprise-grade quality standards. ",
-      "author": {
-        "name": "Beau Lewis"
-      },
-      "keywords": [
-        "final-review-before-commitpush",
-        "code-review-and-approval",
-        "ceo",
-        "quality-control"
-      ],
-      "category": "final-review-before-commitpush",
-      "homepage": "https://subagents.cc/agents/ceo-quality-controller-agent",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "problem-solver-specialist",
-      "source": "./agents/problem-solver-specialist.md",
-      "description": "Universal expert problem-solving agent specializing in complex debugging, mysterious runtime behavior, integration issues, and multi-layered technical challenges across any technology stack or project type. \nUses advanced research methodologies including GitHub issues mining, Perplexity deep research, community solutions validation, browser automation testing, and multi-source documentation analysis. \nProactively use for intricate bugs, cryptic error messages, performance anomalies",
-      "author": {
-        "name": "Beau Lewis"
-      },
-      "keywords": [
-        "errors",
-        "problem-soliving",
-        "error-research",
-        "bug-researcher-and-fixer"
-      ],
-      "category": "errors",
-      "homepage": "https://subagents.cc/agents/problem-solver-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "codebase-documenter",
-      "source": "./agents/codebase-documenter.md",
-      "description": "Use this agent when you need to analyze a service or codebase component and create comprehensive documentation in CLAUDE.md files.",
-      "author": {
-        "name": " Anand Tyagi"
-      },
-      "keywords": [
-        "documentation"
-      ],
-      "category": "documentation",
-      "homepage": "https://subagents.cc/agents/codebase-documenter",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "context7-docs-fetcher",
-      "source": "./agents/context7-docs-fetcher.md",
-      "description": "Ready to use agent for Context7 MCP documentation retrieval",
-      "author": {
-        "name": "normalnormie"
-      },
-      "keywords": [
-        "mcp"
-      ],
-      "category": "mcp",
-      "homepage": "https://subagents.cc/agents/context7-docs-fetcher",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "code-architect",
-      "source": "./agents/code-architect.md",
-      "description": "Use this agent when you need to design scalable architecture and folder structures for new features or projects.",
-      "author": {
-        "name": "abhishek shah"
-      },
-      "keywords": [
-        "architecture",
-        "project-management",
-        "product"
-      ],
-      "category": "architecture",
-      "homepage": "https://subagents.cc/agents/code-architect",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "mobile-ux-optimizer",
-      "source": "./agents/mobile-ux-optimizer.md",
-      "description": "Use this agent when you need to optimize UI/UX components or interfaces for mobile-first experiences, analyze existing design themes, or ensure mobile usability standards are met.",
-      "author": {
-        "name": "abhishek shah"
-      },
-      "keywords": [
-        "mobile",
-        "android",
-        "design"
-      ],
-      "category": "mobile",
-      "homepage": "https://subagents.cc/agents/mobile-ux-optimizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "react-native-dev",
-      "source": "./agents/react-native-dev.md",
-      "description": "Use this agent when you need expert assistance with React Native development tasks including code analysis, component creation, debugging, performance optimization, or architectural decisions.",
-      "author": {
-        "name": "abhishek shah"
-      },
-      "keywords": [
-        "react",
-        "mobile",
-        "android-development"
-      ],
-      "category": "react",
-      "homepage": "https://subagents.cc/agents/react-native-dev",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "deployment-engineer",
-      "source": "./agents/deployment-engineer.md",
-      "description": "Use this agent when setting up CI/CD pipelines, configuring Docker containers, deploying applications to cloud platforms, setting up Kubernetes clusters, implementing infrastructure as code, or automating deployment workflows.",
-      "author": {
-        "name": "Jure Šunić"
-      },
-      "keywords": [
-        "engineering",
-        "deployment",
-        "dev-ops"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/deployment-engineer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "legal-advisor",
-      "source": "./agents/legal-advisor.md",
-      "description": "Legal advisory, compliance documentation, RFP response creation, and enterprise contract support for B2B applications. This agent specializes in legal document creation, regulatory analysis, enterprise procurement compliance, and RFP winning strategies. Transforms complex legal requirements into competitive advantages. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "b2b",
-        "sales",
-        "product",
-        "legal"
-      ],
-      "category": "b2b",
-      "homepage": "https://subagents.cc/agents/legal-advisor",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "customer-success-manager",
-      "source": "./agents/customer-success-manager.md",
-      "description": "Optimize customer success operations for B2B enterprise clients. This agent specializes in customer health monitoring, expansion revenue identification, churn prevention, enterprise account management, and customer lifecycle optimization. Handles enterprise onboarding, adoption tracking, and strategic account growth. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "product",
-        "marketing",
-        "sales",
-        "b2b"
-      ],
-      "category": "product",
-      "homepage": "https://subagents.cc/agents/customer-success-manager",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "compliance-automation-specialist",
-      "source": "./agents/compliance-automation-specialist.md",
-      "description": "Automate compliance processes for SOC 2, ISO 27001, GDPR, HIPAA, and other enterprise regulatory requirements. This agent specializes in compliance automation, audit preparation, continuous monitoring, and regulatory framework implementation for B2B platforms.  ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "compliance",
-        "sales",
-        "studio-operations",
-        "automation"
-      ],
-      "category": "compliance",
-      "homepage": "https://subagents.cc/agents/compliance-automation-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "b2b-project-shipper",
-      "source": "./agents/b2b-project-shipper.md",
-      "description": "Coordinate business launches, managing enterprise release processes, and execute B2B go-to-market strategies within the 6-day development cycle. Should be triggered automatically when enterprise release dates are set, B2B launch plans are needed, or business market positioning is discussed. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "marketing",
-        "b2b",
-        "product",
-        "sales"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/b2b-project-shipper",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "product-sales-specialist",
-      "source": "./agents/product-sales-specialist.md",
-      "description": "Support B2B sales through product design, user research, project management, and creative RFP responses. Create compelling product demonstrations, design-focused RFP sections, user experience narratives, and project management frameworks that win enterprise deals. Combines product expertise with sales enablement.ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "sales",
-        "b2b",
-        "product"
-      ],
-      "category": "sales",
-      "homepage": "https://subagents.cc/agents/product-sales-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "pricing-packaging-specialist",
-      "source": "./agents/pricing-packaging-specialist.md",
-      "description": "Optimize B2B pricing strategies, packaging models, and revenue optimization for enterprise sales. This agent specializes in value-based pricing, usage-based billing, enterprise contract negotiations, and competitive pricing analysis for SaaS platforms. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "b2b",
-        "sales"
-      ],
-      "category": "b2b",
-      "homepage": "https://subagents.cc/agents/pricing-packaging-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "enterprise-onboarding-specialist",
-      "source": "./agents/enterprise-onboarding-specialist.md",
-      "description": "Design and optimize complex enterprise customer onboarding processes involving multiple stakeholders, change management, and organizational adoption. This agent specializes in enterprise implementation strategy, stakeholder management, change management, and large-scale rollout coordination for B2B platforms. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "b2b",
-        "onboarding",
-        "product"
-      ],
-      "category": "b2b",
-      "homepage": "https://subagents.cc/agents/enterprise-onboarding-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "technical-sales-engineer",
-      "source": "./agents/technical-sales-engineer.md",
-      "description": "Bridge technical and sales requirements for B2B enterprise deals. Create technical demos, POC development, RFP responses, solution architecture for sales, and technical objection handling. Handles complex enterprise sales cycles with technical evaluation phases. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "b2b",
-        "engineering",
-        "sales"
-      ],
-      "category": "b2b",
-      "homepage": "https://subagents.cc/agents/technical-sales-engineer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "monitoring-observability-specialist",
-      "source": "./agents/monitoring-observability-specialist.md",
-      "description": "Use this agent when you need to implement comprehensive monitoring, observability, and alerting systems for enterprise B2B applications. This agent specializes in APM, logging, metrics, distributed tracing, SLA monitoring, and proactive incident management for business-critical systems. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "b2b",
-        "infrastructure"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/monitoring-observability-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "enterprise-security-reviewer",
-      "source": "./agents/enterprise-security-reviewer.md",
-      "description": "Use this agent for comprehensive B2B security assessments, enterprise compliance validation, multi-tenant security reviews, and security audit preparation. This agent specializes in SOC 2, GDPR, ISO 27001 compliance and enterprise-grade security implementations for B2B SaaS platforms. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "security",
-        "compliance"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/enterprise-security-reviewer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "enterprise-integrator-architect",
-      "source": "./agents/enterprise-integrator-architect.md",
-      "description": "Design and implement enterprise system integrations for B2B applications. Connect with Salesforce, HubSpot, Microsoft 365, Google Workspace, SAP, Oracle ERP, and other critical third-party software. Handles external API orchestration, data synchronization w/ enterprise systems, webhook management, enterprise-grade integration patterns. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "architecture",
-        "integration"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/enterprise-integrator-architect",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "database-performance-optimizer",
-      "source": "./agents/database-performance-optimizer.md",
-      "description": "Optimize database performance for B2B applications at enterprise scale. This agent specializes in multi-tenant database optimization, query performance tuning, indexing strategies, connection pooling, and database scaling for SaaS platforms. Handles PostgreSQL, MySQL, MongoDB, and cloud database optimizations. ISO-certified framework (27001 | 42001 | 42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "modeling",
-        "databases",
-        "data",
-        "engineering"
-      ],
-      "category": "modeling",
-      "homepage": "https://subagents.cc/agents/database-performance-optimizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "data-privacy-engineer",
-      "source": "./agents/data-privacy-engineer.md",
-      "description": "Implement data privacy engineering, GDPR compliance, data protection frameworks, and privacy-by-design principles for B2B applications. This agent specializes in privacy engineering, data minimization, consent management, and global privacy regulation compliance for enterprise platforms. ISO-certified framework (27001|42001|42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "privacy"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/data-privacy-engineer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "api-integration-specialist",
-      "source": "./agents/api-integration-specialist.md",
-      "description": "Design and implement internal API architecture, developer experience, and API infrastructure for B2B applications. This agent specializes in REST API design, GraphQL implementation, API documentation, SDK development, and developer portal creation. Handles API performance optimization, versioning strategies, and internal service communication.  ISO-certified framework (27001|42001|42005) ensures valuable insights with complete liability protection. https://github.com/alyssonfranklin/b2b-agents/",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "api",
-        "integration",
-        "prompts"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/api-integration-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "ai-ethics-governance-specialist",
-      "source": "./agents/ai-ethics-governance-specialist.md",
-      "description": "Use this agent when you need to implement AI ethics frameworks, governance policies, and responsible AI practices for B2B applications. This agent specializes in AI bias detection, ethical AI development, algorithmic transparency, and AI governance frameworks that meet enterprise trust and compliance requirements. https://github.com/alyssonfranklin/b2b-agents/\n",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "ethics",
-        "prompts"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/ai-ethics-governance-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "accessibility-expert",
-      "source": "./agents/accessibility-expert.md",
-      "description": "Use this agent for WCAG, Section 508, Brazilian Marco Civil, and other a11y compliance in B2B apps. Specializes in enterprise accessibility audits and inclusive design. Every recommendation includes legal safeguards, professional boundaries, and expert validation requirements. ISO-certified framework (27001|42001|42005)  ensures valuable insights with complete liability protection.",
-      "author": {
-        "name": "Alysson Franklin"
-      },
-      "keywords": [
-        "engineering",
-        "accessibility",
-        "prompts"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/accessibility-expert",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "n8n-workflow-builder",
-      "source": "./agents/n8n-workflow-builder.md",
-      "description": "Use this agent when you need to design, build, or validate n8n automation workflows.",
-      "author": {
-        "name": "Jure Šunić"
-      },
-      "keywords": [
-        "n8n",
-        "engineering"
-      ],
-      "category": "n8n",
-      "homepage": "https://subagents.cc/agents/n8n-workflow-builder",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "python-expert",
-      "source": "./agents/python-expert.md",
-      "description": "Use this agent when working with Python code that requires advanced features, performance optimization, or comprehensive refactoring.",
-      "author": {
-        "name": "Jure Šunić"
-      },
-      "keywords": [
-        "engineering",
-        "python"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/python-expert",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "prd-specialist",
-      "source": "./agents/prd-specialist.md",
-      "description": "Use this agent when you need to create comprehensive Product Requirements Documents (PRDs) that combine business strategy, technical architecture, and user research.",
-      "author": {
-        "name": "Jure Šunić"
-      },
-      "keywords": [
-        "engineering",
-        "project-management",
-        "product"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/prd-specialist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "angelos-symbo",
-      "source": "./agents/angelos-symbo.md",
-      "description": "Converts a prompt to Symbolic notation, I tried to replicate Christophe Perreau symbolic prompts, all credits belong to him which we heartily thanks ♥\nIt allows a 'space of reasoning' which Christophe describes as 'the latent field of possibilities', it increases 'cognitive load' while allowing 'extending' to the emerging capabilities of LLMs, useful when you want to leverage the creative side of a LLM while still being surgical depending on your prompt logic.",
-      "author": {
-        "name": "normalnormie"
-      },
-      "keywords": [
-        "prompts"
-      ],
-      "category": "prompts",
-      "homepage": "https://subagents.cc/agents/angelos-symbo",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "onomastophes",
-      "source": "./agents/onomastophes.md",
-      "description": "Generates contemporary names that have their roots in ancient Greek pantheon, useful for names of agents, storytelling, branding, or just for fun",
-      "author": {
-        "name": "normalnormie"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/onomastophes",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "changelog-generator",
-      "source": "./agents/changelog-generator.md",
-      "description": "Look at your git history and produce changelogs for a given timeframe.",
-      "author": {
-        "name": "Joe Heitzeberg"
-      },
-      "keywords": [
-        "engineering",
-        "product"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/changelog-generator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "model-context-protocol-mcp-expert",
-      "source": "./agents/model-context-protocol-mcp-expert.md",
-      "description": "Use this agent when you need assistance with Model Context Protocol (MCP) development,\nincluding building clients and servers, debugging MCP applications,\nunderstanding protocol specifications, or implementing MCP solutions using\nPython or TypeScript SDKs. This includes tasks like creating new MCP servers,\nintegrating MCP clients into applications, troubleshooting connection issues,\noptimizing MCP implementations, or answering questions about MCP architecture and best practices.",
-      "author": {
-        "name": "Mo"
-      },
-      "keywords": [
-        "mcp"
-      ],
-      "category": "mcp",
-      "homepage": "https://subagents.cc/agents/model-context-protocol-mcp-expert",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "workflow-optimizer",
-      "source": "./agents/workflow-optimizer.md",
-      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://subagents.cc/agents/workflow-optimizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "tool-evaluator",
-      "source": "./agents/tool-evaluator.md",
-      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://subagents.cc/agents/tool-evaluator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "test-results-analyzer",
-      "source": "./agents/test-results-analyzer.md",
-      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://subagents.cc/agents/test-results-analyzer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "performance-benchmarker",
-      "source": "./agents/performance-benchmarker.md",
-      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring speed, identifying bottlenecks, and providing actionable optimization strategies for applications.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://subagents.cc/agents/performance-benchmarker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "api-tester",
-      "source": "./agents/api-tester.md",
-      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "testing"
-      ],
-      "category": "testing",
-      "homepage": "https://subagents.cc/agents/api-tester",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "support-responder",
-      "source": "./agents/support-responder.md",
-      "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "studio-operations"
-      ],
-      "category": "studio-operations",
-      "homepage": "https://subagents.cc/agents/support-responder",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "legal-compliance-checker",
-      "source": "./agents/legal-compliance-checker.md",
-      "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "studio-operations"
-      ],
-      "category": "studio-operations",
-      "homepage": "https://subagents.cc/agents/legal-compliance-checker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "infrastructure-maintainer",
-      "source": "./agents/infrastructure-maintainer.md",
-      "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "studio-operations"
-      ],
-      "category": "studio-operations",
-      "homepage": "https://subagents.cc/agents/infrastructure-maintainer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "finance-tracker",
-      "source": "./agents/finance-tracker.md",
-      "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "studio-operations"
-      ],
-      "category": "studio-operations",
-      "homepage": "https://subagents.cc/agents/finance-tracker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "analytics-reporter",
-      "source": "./agents/analytics-reporter.md",
-      "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "studio-operations"
-      ],
-      "category": "studio-operations",
-      "homepage": "https://subagents.cc/agents/analytics-reporter",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "studio-producer",
-      "source": "./agents/studio-producer.md",
-      "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "project-management"
-      ],
-      "category": "project-management",
-      "homepage": "https://subagents.cc/agents/studio-producer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "project-shipper",
-      "source": "./agents/project-shipper.md",
-      "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "project-management"
-      ],
-      "category": "project-management",
-      "homepage": "https://subagents.cc/agents/project-shipper",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "experiment-tracker",
-      "source": "./agents/experiment-tracker.md",
-      "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "project-management"
-      ],
-      "category": "project-management",
-      "homepage": "https://subagents.cc/agents/experiment-tracker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "trend-researcher",
-      "source": "./agents/trend-researcher.md",
-      "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "product"
-      ],
-      "category": "product",
-      "homepage": "https://subagents.cc/agents/trend-researcher",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "sprint-prioritizer",
-      "source": "./agents/sprint-prioritizer.md",
-      "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within tight timelines.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "product"
-      ],
-      "category": "product",
-      "homepage": "https://subagents.cc/agents/sprint-prioritizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "feedback-synthesizer",
-      "source": "./agents/feedback-synthesizer.md",
-      "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "product"
-      ],
-      "category": "product",
-      "homepage": "https://subagents.cc/agents/feedback-synthesizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "twitter-engager",
-      "source": "./agents/twitter-engager.md",
-      "description": "Twitter Engager agent",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/twitter-engager",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "tiktok-strategist",
-      "source": "./agents/tiktok-strategist.md",
-      "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/tiktok-strategist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "reddit-community-builder",
-      "source": "./agents/reddit-community-builder.md",
-      "description": "Reddit Community Builder agent",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/reddit-community-builder",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "instagram-curator",
-      "source": "./agents/instagram-curator.md",
-      "description": "Instagram Curator agent",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/instagram-curator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "growth-hacker",
-      "source": "./agents/growth-hacker.md",
-      "description": "Growth Hacker agent",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/growth-hacker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "content-creator",
-      "source": "./agents/content-creator.md",
-      "description": "Content Creator agent",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/content-creator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "app-store-optimizer",
-      "source": "./agents/app-store-optimizer.md",
-      "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility and downloads.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "marketing"
-      ],
-      "category": "marketing",
-      "homepage": "https://subagents.cc/agents/app-store-optimizer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "test-writer-fixer",
-      "source": "./agents/test-writer-fixer.md",
-      "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/test-writer-fixer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "rapid-prototyper",
-      "source": "./agents/rapid-prototyper.md",
-      "description": "Use this agent when you need to quickly create a new application prototype, MVP, or proof-of-concept within the 6-day development cycle. This agent specializes in scaffolding projects, integrating trending features, and building functional demos rapidly. Examples: <example> Context: Starting a new experiment or app idea user: \"Create a new app that helps people overcome phone anxiety\" assistant: \"I'll help you create a phone anxiety app. Let me use the rapid-prototyper agent to scaffold this project and build an MVP.\"",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/rapid-prototyper",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "mobile-app-builder",
-      "source": "./agents/mobile-app-builder.md",
-      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/mobile-app-builder",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "frontend-developer",
-      "source": "./agents/frontend-developer.md",
-      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent excels at creating responsive, accessible, and performant web applications.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/frontend-developer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "devops-automator",
-      "source": "./agents/devops-automator.md",
-      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles. Examples: <example> Context: Setting up automated deployments user: \"We need automatic deployments when we push to main\" assistant: \"I'll set up a complete CI/CD pipeline. Let me use the devops-automator agent to configure automated testing, building, and deployment.\" <commentary> Automated deployments require careful pipeline configuration and proper testing stages.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/devops-automator",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "backend-architect",
-      "source": "./agents/backend-architect.md",
-      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services. Examples: <example> Context: Designing a new API user: \"We need an API for our social sharing feature\" assistant: \"I'll design a RESTful API with proper authentication and rate limiting. Let me use the backend-architect agent to create a scalable backend architecture.\"",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/backend-architect",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "ai-engineer",
-      "source": "./agents/ai-engineer.md",
-      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "engineering"
-      ],
-      "category": "engineering",
-      "homepage": "https://subagents.cc/agents/ai-engineer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "whimsy-injector",
-      "source": "./agents/whimsy-injector.md",
-      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "design"
-      ],
-      "category": "design",
-      "homepage": "https://subagents.cc/agents/whimsy-injector",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "visual-storyteller",
-      "source": "./agents/visual-storyteller.md",
-      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "design"
-      ],
-      "category": "design",
-      "homepage": "https://subagents.cc/agents/visual-storyteller",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "ux-researcher",
-      "source": "./agents/ux-researcher.md",
-      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "design"
-      ],
-      "category": "design",
-      "homepage": "https://subagents.cc/agents/ux-researcher",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "ui-designer",
-      "source": "./agents/ui-designer.md",
-      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "design"
-      ],
-      "category": "design",
-      "homepage": "https://subagents.cc/agents/ui-designer",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "brand-guardian",
-      "source": "./agents/brand-guardian.md",
-      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "design"
-      ],
-      "category": "design",
-      "homepage": "https://subagents.cc/agents/brand-guardian",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "studio-coach",
-      "source": "./agents/studio-coach.md",
-      "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "bonus"
-      ],
-      "category": "bonus",
-      "homepage": "https://subagents.cc/agents/studio-coach",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "joker",
-      "source": "./agents/joker.md",
-      "description": "Use this agent when you need to lighten the mood, create funny content, or add humor to any situation. This agent specializes in dad jokes, programming puns, and startup humor.",
-      "author": {
-        "name": "Michael Galpert",
-        "url": "https://github.com/mgalpert"
-      },
-      "keywords": [
-        "bonus"
-      ],
-      "category": "bonus",
-      "homepage": "https://subagents.cc/agents/joker",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "data-scientist",
-      "source": "./agents/data-scientist.md",
-      "description": "Data analysis expert for SQL queries, BigQuery operations, and data insights. Use proactively for data analysis tasks and queries.",
-      "author": {
-        "name": " Anand Tyagi"
-      },
-      "keywords": [
-        "data-science",
-        "sql"
-      ],
-      "category": "data-science",
-      "homepage": "https://subagents.cc/agents/data-scientist",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "debugger",
-      "source": "./agents/debugger.md",
-      "description": "Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.",
-      "author": {
-        "name": " Anand Tyagi"
-      },
-      "keywords": [
-        "debugging"
-      ],
-      "category": "debugging",
-      "homepage": "https://subagents.cc/agents/debugger",
-      "strict": false,
-      "type": "agent"
-    },
-    {
-      "name": "code-reviewer",
-      "source": "./agents/code-reviewer.md",
-      "description": "Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code.",
-      "author": {
-        "name": " Anand Tyagi"
-      },
-      "keywords": [
-        "code-review"
-      ],
-      "category": "code-review",
-      "homepage": "https://subagents.cc/agents/code-reviewer",
-      "strict": false,
-      "type": "agent"
     }
   ]
 }
