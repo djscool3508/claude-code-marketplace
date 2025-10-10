@@ -11,5 +11,6 @@
     "plan",
     "code-review",
     "workflow"
-  ]
+  ],
+  "commands": "./commands/"
 }

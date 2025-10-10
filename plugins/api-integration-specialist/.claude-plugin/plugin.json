@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/api-integration-specialist",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

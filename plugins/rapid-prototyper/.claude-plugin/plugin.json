@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/rapid-prototyper",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

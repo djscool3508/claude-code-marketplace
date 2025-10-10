@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/refractor",
   "keywords": [
     "refactoring"
-  ]
+  ],
+  "commands": "./commands/"
 }

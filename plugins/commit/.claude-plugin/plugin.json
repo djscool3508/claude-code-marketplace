@@ -7,5 +7,6 @@
     "url": "https://github.com/evmts"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/commit"
+  "homepage": "https://claudecodecommands.directory/commands/commit",
+  "commands": "./commands/"
 }

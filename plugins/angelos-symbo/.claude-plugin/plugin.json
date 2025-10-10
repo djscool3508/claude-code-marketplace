@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/angelos-symbo",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

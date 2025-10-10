@@ -7,5 +7,6 @@
     "url": "https://github.com/jeremymailen"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/fix-github-issue"
+  "homepage": "https://claudecodecommands.directory/commands/fix-github-issue",
+  "commands": "./commands/"
 }

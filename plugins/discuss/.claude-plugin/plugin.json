@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/commands/discuss",
   "keywords": [
     "plan"
-  ]
+  ],
+  "commands": "./commands/"
 }

@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/test-file",
   "keywords": [
     "testing"
-  ]
+  ],
+  "commands": "./commands/"
 }

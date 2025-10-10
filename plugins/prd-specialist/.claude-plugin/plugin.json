@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/prd-specialist",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

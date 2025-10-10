@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/code-architect",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

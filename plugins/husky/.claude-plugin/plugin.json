@@ -7,5 +7,6 @@
     "url": "https://github.com/evmts"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/husky"
+  "homepage": "https://claudecodecommands.directory/commands/husky",
+  "commands": "./commands/"
 }

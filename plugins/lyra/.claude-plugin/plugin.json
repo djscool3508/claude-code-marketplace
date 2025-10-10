@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/lyra",
   "keywords": [
     "workflow"
-  ]
+  ],
+  "commands": "./commands/"
 }

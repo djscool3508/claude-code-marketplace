@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/data-scientist",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

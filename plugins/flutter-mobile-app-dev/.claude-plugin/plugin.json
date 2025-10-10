@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/flutter-mobile-app-dev",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

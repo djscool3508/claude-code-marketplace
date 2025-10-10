@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/visual-storyteller",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

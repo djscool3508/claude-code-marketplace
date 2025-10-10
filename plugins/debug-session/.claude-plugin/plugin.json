@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/debug-session",
   "keywords": [
     "debugging"
-  ]
+  ],
+  "commands": "./commands/"
 }

@@ -7,5 +7,6 @@
     "url": "https://github.com/jerseycheese"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/analyze-issue"
+  "homepage": "https://claudecodecommands.directory/commands/analyze-issue",
+  "commands": "./commands/"
 }

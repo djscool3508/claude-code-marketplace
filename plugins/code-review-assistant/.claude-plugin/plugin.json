@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/commands/code-review-assistant",
   "keywords": [
     "code-review"
-  ]
+  ],
+  "commands": "./commands/"
 }

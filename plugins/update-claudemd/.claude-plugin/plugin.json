@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/update-claudemd",
   "keywords": [
     "code-review"
-  ]
+  ],
+  "commands": "./commands/"
 }

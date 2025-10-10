@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/compliance-automation-specialist",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

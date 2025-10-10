@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/code-review",
   "keywords": [
     "code-review"
-  ]
+  ],
+  "commands": "./commands/"
 }

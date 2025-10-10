@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/commands/explore",
   "keywords": [
     "explore"
-  ]
+  ],
+  "commands": "./commands/"
 }

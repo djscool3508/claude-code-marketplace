@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/experiment-tracker",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

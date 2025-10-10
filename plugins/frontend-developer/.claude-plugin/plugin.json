@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/frontend-developer",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

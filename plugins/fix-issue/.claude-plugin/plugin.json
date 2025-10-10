@@ -7,5 +7,6 @@
     "url": "https://github.com/metabase"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/fix-issue"
+  "homepage": "https://claudecodecommands.directory/commands/fix-issue",
+  "commands": "./commands/"
 }

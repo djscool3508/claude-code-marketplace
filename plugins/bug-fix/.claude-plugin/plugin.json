@@ -7,5 +7,6 @@
     "url": "https://github.com/danielscholl"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/bug-fix"
+  "homepage": "https://claudecodecommands.directory/commands/bug-fix",
+  "commands": "./commands/"
 }

@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/commands/documentation-generator",
   "keywords": [
     "documentation"
-  ]
+  ],
+  "commands": "./commands/"
 }

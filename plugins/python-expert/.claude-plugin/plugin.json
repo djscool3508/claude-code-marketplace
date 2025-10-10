@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/python-expert",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/whimsy-injector",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

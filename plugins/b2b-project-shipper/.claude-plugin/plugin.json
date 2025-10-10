@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/b2b-project-shipper",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

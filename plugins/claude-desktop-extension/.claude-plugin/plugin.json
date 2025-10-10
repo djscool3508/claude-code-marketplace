@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/claude-desktop-extension",
   "keywords": [
     "workflow"
-  ]
+  ],
+  "commands": "./commands/"
 }

@@ -9,5 +9,6 @@
   "homepage": "https://claudecodecommands.directory/agents/debugger",
   "keywords": [
     "subagent"
-  ]
+  ],
+  "agents": "./agents/"
 }

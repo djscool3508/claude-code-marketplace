@@ -12,5 +12,6 @@
     "refactoring",
     "testing",
     "security"
-  ]
+  ],
+  "commands": "./commands/"
 }

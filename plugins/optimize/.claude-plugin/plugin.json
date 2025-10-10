@@ -10,5 +10,6 @@
   "homepage": "https://claudecodecommands.directory/commands/optimize",
   "keywords": [
     "performance"
-  ]
+  ],
+  "commands": "./commands/"
 }

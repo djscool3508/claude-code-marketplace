@@ -15,5 +15,6 @@
     "code-review",
     "workflow",
     "debugging"
-  ]
+  ],
+  "commands": "./commands/"
 }

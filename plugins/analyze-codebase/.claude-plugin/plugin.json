@@ -11,5 +11,6 @@
   "keywords": [
     "explore",
     "plan"
-  ]
+  ],
+  "commands": "./commands/"
 }

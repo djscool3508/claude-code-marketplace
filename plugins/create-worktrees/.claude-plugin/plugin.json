@@ -7,5 +7,6 @@
     "url": "https://github.com/evmts"
   },
   "category": "general",
-  "homepage": "https://claudecodecommands.directory/commands/create-worktrees"
+  "homepage": "https://claudecodecommands.directory/commands/create-worktrees",
+  "commands": "./commands/"
 }
