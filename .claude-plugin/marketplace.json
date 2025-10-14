@@ -11,26 +11,6 @@
   },
   "plugins": [
     {
-      "name": "experienced-engineer",
-      "source": "./plugins/experienced-engineer",
-      "description": "Comprehensive plugin with specialized engineering subagents (API Architect, Security Specialist, Code Quality Reviewer, etc.) and productivity commands for software teams",
-      "version": "1.0.0",
-      "author": {
-        "name": "Anand Tyagi",
-        "url": "https://github.com/ananddtyagi"
-      },
-      "category": "productivity",
-      "keywords": [
-        "engineering",
-        "team",
-        "productivity",
-        "code-quality",
-        "best-practices",
-        "agents",
-        "subagents"
-      ]
-    },
-    {
       "name": "documentation-generator",
       "source": "./plugins/documentation-generator",
       "description": "Create comprehensive documentation for code, APIs, and projects.",
@@ -1615,6 +1595,26 @@
       "homepage": "https://claudecodecommands.directory/agents/workflow-optimizer",
       "keywords": [
         "subagent"
+      ]
+    },
+    {
+      "name": "experienced-engineer",
+      "source": "./plugins/experienced-engineer",
+      "description": "Comprehensive plugin with specialized engineering subagents (API Architect, Security Specialist, Code Quality Reviewer, etc.) and productivity commands for software teams",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anand Tyagi",
+        "url": "https://github.com/ananddtyagi"
+      },
+      "category": "productivity",
+      "keywords": [
+        "engineering",
+        "team",
+        "productivity",
+        "code-quality",
+        "best-practices",
+        "agents",
+        "subagents"
       ]
     }
   ]
