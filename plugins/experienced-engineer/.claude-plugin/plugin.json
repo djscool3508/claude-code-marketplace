@@ -6,8 +6,8 @@
     "name": "Anand Tyagi"
   },
   "keywords": ["engineering", "team", "productivity", "code-quality", "best-practices"],
-  "commands": "./commands",
-  "agents": "./agents",
+  "commands": "./commands/",
+  "agents": "./agents/",
   "hooks": "./hooks/hooks.json"
 }
 
