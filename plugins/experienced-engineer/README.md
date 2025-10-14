@@ -46,10 +46,10 @@ Automatically update your `CLAUDE.md` file to reflect major changes in the codeb
 
 ```bash
 # Add the marketplace (if not already added)
-/plugin marketplace add <marketplace-name>
+/plugin marketplace add claude-code-marketplace
 
 # Install the plugin
-/plugin install experienced-engineer@<marketplace-name>
+/plugin install experienced-engineer@claude-code-marketplace
 ```
 
 ### Local Development
