@@ -1616,6 +1616,15 @@
       "keywords": [
         "subagent"
       ]
+    },
+    {
+      "name": "experienced-engineer",
+      "source": "./plugins/experienced-engineer",
+      "description": "Comprehensive plugin with specialized engineering subagents (API Architect, Security Specialist, Code Quality Reviewer, etc.) and productivity commands for software teams",
+      "version": "1.0.0",
+      "author": {
+        "name": "Anand Tyagi"
+      }
     }
   ]
 }
