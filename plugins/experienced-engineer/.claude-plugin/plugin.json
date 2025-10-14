@@ -1,0 +1,13 @@
+{
+  "name": "experienced-engineer",
+  "version": "1.0.0",
+  "description": "A comprehensive plugin with specialized engineering subagents and productivity commands for software teams",
+  "author": {
+    "name": "Claude Code Team"
+  },
+  "keywords": ["engineering", "team", "productivity", "code-quality", "best-practices"],
+  "commands": "./commands",
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}
+

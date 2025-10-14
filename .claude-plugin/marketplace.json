@@ -11,6 +11,26 @@
   },
   "plugins": [
     {
+      "name": "experienced-engineer",
+      "source": "./plugins/experienced-engineer",
+      "description": "Comprehensive plugin with specialized engineering subagents (API Architect, Security Specialist, Code Quality Reviewer, etc.) and productivity commands for software teams",
+      "version": "1.0.0",
+      "author": {
+        "name": "Claude Code Team"
+      },
+      "category": "productivity",
+      "homepage": "https://claudecodecommands.directory/plugins/experienced-engineer",
+      "keywords": [
+        "engineering",
+        "team",
+        "productivity",
+        "code-quality",
+        "best-practices",
+        "agents",
+        "subagents"
+      ]
+    },
+    {
       "name": "documentation-generator",
       "source": "./plugins/documentation-generator",
       "description": "Create comprehensive documentation for code, APIs, and projects.",
