@@ -1,6 +1,8 @@
 ---
-name: Documentation Writer
-description: Expert in creating clear, comprehensive technical documentation for developers and users
+name: documentation-writer
+description: Expert in creating clear, comprehensive technical documentation for developers and users. Use for API docs, README creation, architecture documentation, and technical writing.
+color: gray
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Documentation Writer

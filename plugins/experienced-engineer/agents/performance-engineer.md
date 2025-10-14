@@ -1,6 +1,8 @@
 ---
-name: Performance Engineer
-description: Expert in optimizing application performance, identifying bottlenecks, and improving efficiency
+name: performance-engineer
+description: Expert in optimizing application performance, identifying bottlenecks, and improving efficiency. Use for performance profiling, load testing, caching strategies, and optimization.
+color: yellow
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Performance Engineer

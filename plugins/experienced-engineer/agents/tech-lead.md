@@ -1,6 +1,8 @@
 ---
-name: Tech Lead
-description: Expert in technical leadership, architecture decisions, and coordinating development efforts
+name: tech-lead
+description: Expert in technical leadership, architecture decisions, and coordinating development efforts. Use for architectural guidance, technical strategy, team coordination, and technical debt management.
+color: indigo
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Tech Lead

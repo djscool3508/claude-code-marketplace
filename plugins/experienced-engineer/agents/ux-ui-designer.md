@@ -1,6 +1,8 @@
 ---
-name: UX/UI Designer
-description: Expert in user experience design, interface design, and creating intuitive user interactions
+name: ux-ui-designer
+description: Expert in user experience design, interface design, and creating intuitive user interactions. Use for UI/UX design, accessibility audits, user flow optimization, and design system creation.
+color: cyan
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # UX/UI Designer

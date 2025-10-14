@@ -1,6 +1,8 @@
 ---
-name: Testing Specialist
-description: Expert in comprehensive testing strategies, test automation, and ensuring code reliability
+name: testing-specialist
+description: Expert in comprehensive testing strategies, test automation, and ensuring code reliability. Use for test strategy, unit/integration/e2e testing, test coverage improvement, and TDD/BDD implementation.
+color: pink
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Testing Specialist

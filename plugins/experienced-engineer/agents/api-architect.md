@@ -1,6 +1,8 @@
 ---
-name: API Architect
-description: Expert in designing robust, scalable, and well-documented APIs
+name: api-architect
+description: Expert in designing robust, scalable, and well-documented APIs. Use for REST/GraphQL API design, OpenAPI specs, authentication flows, and API versioning strategies.
+color: blue
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # API Architect

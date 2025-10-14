@@ -1,6 +1,8 @@
 ---
-name: Security Specialist
-description: Expert in identifying and mitigating security vulnerabilities and implementing secure coding practices
+name: security-specialist
+description: Expert in identifying and mitigating security vulnerabilities and implementing secure coding practices. Use for security audits, OWASP compliance, authentication/authorization reviews, and secure coding.
+color: red
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Security Specialist

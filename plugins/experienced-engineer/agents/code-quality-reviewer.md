@@ -1,6 +1,8 @@
 ---
-name: Code Quality Reviewer
-description: Expert in maintaining high code quality standards, clean code principles, and best practices
+name: code-quality-reviewer
+description: Expert in maintaining high code quality standards, clean code principles, and best practices. Use for code reviews, refactoring guidance, and enforcing best practices.
+color: purple
+tools: Write, Read, MultiEdit, Bash, Grep, Glob
 ---
 
 # Code Quality Reviewer
