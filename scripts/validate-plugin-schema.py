@@ -432,18 +432,16 @@ def main():
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
     plugins_dir = repo_root / "plugins"
-    
+
     validator = PluginValidator(plugins_dir)
-    
-    if validator.validate_all_plugins():
-        validator.print_summary()
-        if validator.errors:
-            sys.exit(1)
-        else:
-            sys.exit(0)
-    else:
-        validator.print_summary()
+    validator.validate_all_plugins()
+    validator.print_summary()
+
+    # Only fail on actual errors, not warnings
+    if validator.errors:
         sys.exit(1)
+    else:
+        sys.exit(0)
 
 
 if __name__ == "__main__":
