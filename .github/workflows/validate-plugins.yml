@@ -154,16 +154,27 @@ jobs:
               });
             }
       
-      - name: Fail if validation failed
-        if: steps.schema-validation.outputs.exit_code != '0' || steps.sync-validation.outputs.exit_code != '0'
-        run: |
-          echo "❌ Validation failed! Check the errors above."
-          exit 1
-      
-      - name: Validation summary
+      - name: Check validation results
         if: always()
         run: |
-          echo "### Validation Complete! 🎉" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "All validation checks have been completed. Check the sections above for detailed results." >> $GITHUB_STEP_SUMMARY
+          SCHEMA_EXIT="${{ steps.schema-validation.outputs.exit_code }}"
+          SYNC_EXIT="${{ steps.sync-validation.outputs.exit_code }}"
+          
+          echo "Schema validation exit code: $SCHEMA_EXIT"
+          echo "Sync validation exit code: $SYNC_EXIT"
+          
+          if [ "$SCHEMA_EXIT" != "0" ] || [ "$SYNC_EXIT" != "0" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please check the validation results above and fix the errors." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "❌ Validation failed! Please check the errors in the PR comment and workflow logs."
+            exit 1
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ✅ All Validations Passed!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "✅ All validation checks passed successfully!"
+          fi
 
