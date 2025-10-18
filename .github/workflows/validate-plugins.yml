@@ -3,12 +3,9 @@ name: Validate Plugin Schema
 on:
   push:
     branches: [ main, master ]
-    paths:
-      - 'plugins/**'
   pull_request:
     branches: [ main, master ]
-    paths:
-      - 'plugins/**'
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
 
 jobs:
   validate:
