@@ -14,17 +14,24 @@ jobs:
       pull-requests: write  # Needed to post comments on PRs
     
     steps:
-      - name: Checkout code
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}  # Checkout the PR branch (important for pull_request_target)
           fetch-depth: 0  # Fetch all history for accurate PR comparison
-      
+
+      - name: Get validation scripts from base branch
+        run: |
+          # Fetch the base branch to ensure we have validation scripts
+          git fetch origin ${{ github.base_ref }}
+          # Check out scripts from base branch (don't overwrite plugins/)
+          git checkout origin/${{ github.base_ref }} -- scripts/ || echo "No scripts in base branch"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Validate plugin schemas
         id: schema-validation
         continue-on-error: true
@@ -34,6 +41,15 @@ jobs:
           python scripts/validate-plugin-schema.py > /tmp/schema-results.txt 2>&1
           SCHEMA_EXIT=$?
           cat /tmp/schema-results.txt
+
+          # Also print errors directly to the action output for visibility
+          if [ $SCHEMA_EXIT -ne 0 ]; then
+            echo "::error::Schema validation failed with exit code $SCHEMA_EXIT"
+            grep "❌" /tmp/schema-results.txt | while read line; do
+              echo "::error::$line"
+            done
+          fi
+
           echo "exit_code=$SCHEMA_EXIT" >> "$GITHUB_OUTPUT"
           echo "Schema validation exit code: $SCHEMA_EXIT"
           echo "::endgroup::"
@@ -47,6 +63,15 @@ jobs:
           python scripts/validate-marketplace-sync.py > /tmp/sync-results.txt 2>&1
           SYNC_EXIT=$?
           cat /tmp/sync-results.txt
+
+          # Also print errors directly to the action output for visibility
+          if [ $SYNC_EXIT -ne 0 ]; then
+            echo "::error::Marketplace sync validation failed with exit code $SYNC_EXIT"
+            grep "❌" /tmp/sync-results.txt | while read line; do
+              echo "::error::$line"
+            done
+          fi
+
           echo "exit_code=$SYNC_EXIT" >> "$GITHUB_OUTPUT"
           echo "Sync validation exit code: $SYNC_EXIT"
           echo "::endgroup::"
