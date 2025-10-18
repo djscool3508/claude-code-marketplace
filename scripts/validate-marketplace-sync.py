@@ -10,6 +10,7 @@ catalog is also updated.
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -23,6 +24,23 @@ class MarketplaceSyncValidator:
         self.plugins_md_path = repo_root / "plugins.md"
         self.errors: List[str] = []
         self.warnings: List[str] = []
+        self.is_github_actions = os.environ.get('GITHUB_ACTIONS') == 'true'
+    
+    def github_error(self, message: str, file_path: str = None):
+        """Output a GitHub Actions error annotation."""
+        if self.is_github_actions:
+            if file_path:
+                print(f"::error file={file_path}::{message}")
+            else:
+                print(f"::error::{message}")
+    
+    def github_warning(self, message: str, file_path: str = None):
+        """Output a GitHub Actions warning annotation."""
+        if self.is_github_actions:
+            if file_path:
+                print(f"::warning file={file_path}::{message}")
+            else:
+                print(f"::warning::{message}")
     
     def get_plugin_list(self) -> Dict[str, Dict]:
         """Get list of plugins from the plugins directory."""
@@ -178,10 +196,13 @@ class MarketplaceSyncValidator:
             marketplace_updated = any(f in changed_files for f in marketplace_files)
             
             if plugin_changes and not marketplace_updated:
-                self.errors.append(
+                error_msg = (
                     "Plugin files were modified but marketplace files (README.md, plugins.md) were not updated. "
                     "Please update the marketplace documentation to reflect the plugin changes."
                 )
+                self.errors.append(error_msg)
+                self.github_error(error_msg, "README.md")
+                self.github_error("Consider updating plugins.md as well", "plugins.md")
                 return False
             
             print("✓ Marketplace files updated alongside plugin changes")
@@ -201,6 +222,9 @@ class MarketplaceSyncValidator:
             print(f"\n⚠️  Warnings ({len(self.warnings)}):")
             for warning in self.warnings:
                 print(f"  - {warning}")
+                # Output warnings to GitHub Actions
+                if self.is_github_actions and "may be missing" in warning:
+                    self.github_warning(warning, "README.md")
         
         if self.errors:
             print(f"\n❌ Errors ({len(self.errors)}):")
@@ -208,6 +232,50 @@ class MarketplaceSyncValidator:
                 print(f"  - {error}")
         else:
             print("\n✅ Marketplace appears to be in sync!")
+        
+        # Generate GitHub Actions Job Summary
+        if self.is_github_actions:
+            self.generate_github_summary()
+    
+    def generate_github_summary(self):
+        """Generate a GitHub Actions job summary."""
+        summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+        if not summary_file:
+            return
+        
+        with open(summary_file, 'a') as f:
+            f.write("## 📚 Marketplace Sync Validation\n\n")
+            
+            if not self.errors:
+                f.write("### ✅ Marketplace Documentation In Sync!\n\n")
+                if not self.warnings:
+                    f.write("All marketplace documentation files are properly synchronized with plugin changes.\n\n")
+                else:
+                    f.write("Marketplace files are in sync, but there are some warnings to review.\n\n")
+            else:
+                f.write("### ❌ Sync Check Failed\n\n")
+                f.write("**Action Required:** Update marketplace documentation when adding or modifying plugins.\n\n")
+                
+                f.write("#### Errors\n\n")
+                for error in self.errors:
+                    f.write(f"- ❌ {error}\n")
+                f.write("\n")
+            
+            if self.warnings:
+                f.write("#### ⚠️ Warnings\n\n")
+                # Show only first few warnings if there are many
+                warnings_to_show = self.warnings[:5]
+                for warning in warnings_to_show:
+                    f.write(f"- {warning}\n")
+                if len(self.warnings) > 5:
+                    f.write(f"- ... and {len(self.warnings) - 5} more warnings\n")
+                f.write("\n")
+            
+            f.write("#### 📝 How to Fix\n\n")
+            f.write("1. Update `README.md` to include new/modified plugins in the featured sections\n")
+            f.write("2. Update `plugins.md` if it contains a plugin catalog\n")
+            f.write("3. Ensure plugin names match the directory names\n\n")
+            f.write("---\n")
 
 
 def main():

@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for accurate PR comparison
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -21,8 +23,23 @@ jobs:
           python-version: '3.11'
       
       - name: Validate plugin schemas
-        run: python scripts/validate-plugin-schema.py
+        id: schema-validation
+        run: |
+          echo "::group::Plugin Schema Validation"
+          python scripts/validate-plugin-schema.py
+          echo "::endgroup::"
       
       - name: Validate marketplace sync
-        run: python scripts/validate-marketplace-sync.py
+        id: sync-validation
+        run: |
+          echo "::group::Marketplace Sync Validation"
+          python scripts/validate-marketplace-sync.py
+          echo "::endgroup::"
+      
+      - name: Validation summary
+        if: always()
+        run: |
+          echo "### Validation Complete! 🎉" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "All validation checks have been completed. Check the sections above for detailed results." >> $GITHUB_STEP_SUMMARY
 

@@ -20,6 +20,7 @@ Optional:
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Set
@@ -71,6 +72,25 @@ class PluginValidator:
         self.errors: List[str] = []
         self.warnings: List[str] = []
         self.validated_plugins: Set[str] = set()
+        self.is_github_actions = os.environ.get('GITHUB_ACTIONS') == 'true'
+    
+    def github_error(self, message: str, file_path: str = None, line: int = None):
+        """Output a GitHub Actions error annotation."""
+        if self.is_github_actions:
+            if file_path and line:
+                print(f"::error file={file_path},line={line}::{message}")
+            elif file_path:
+                print(f"::error file={file_path}::{message}")
+            else:
+                print(f"::error::{message}")
+    
+    def github_warning(self, message: str, file_path: str = None):
+        """Output a GitHub Actions warning annotation."""
+        if self.is_github_actions:
+            if file_path:
+                print(f"::warning file={file_path}::{message}")
+            else:
+                print(f"::warning::{message}")
     
     def validate_all_plugins(self) -> bool:
         """Validate all plugins in the plugins directory."""
@@ -105,9 +125,9 @@ class PluginValidator:
         for req_file, description in REQUIRED_FILES.items():
             file_path = plugin_dir / req_file
             if not file_path.exists():
-                self.errors.append(
-                    f"[{plugin_name}] Missing required file: {req_file} ({description})"
-                )
+                error_msg = f"[{plugin_name}] Missing required file: {req_file} ({description})"
+                self.errors.append(error_msg)
+                self.github_error(error_msg, str(plugin_dir.relative_to(self.plugins_dir.parent)))
                 plugin_valid = False
             else:
                 # Validate plugin.json content
@@ -163,24 +183,30 @@ class PluginValidator:
                     missing_fields.append(field)
             
             if missing_fields:
-                self.errors.append(
-                    f"[{plugin_name}] plugin.json missing required fields: {', '.join(missing_fields)}"
-                )
+                error_msg = f"[{plugin_name}] plugin.json missing required fields: {', '.join(missing_fields)}"
+                self.errors.append(error_msg)
+                self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)))
                 return False
             
             is_valid = True
             
             # Validate required field types
             if not isinstance(data.get("name"), str) or not data["name"]:
-                self.errors.append(f"[{plugin_name}] plugin.json 'name' must be a non-empty string")
+                error_msg = f"[{plugin_name}] plugin.json 'name' must be a non-empty string"
+                self.errors.append(error_msg)
+                self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)), 2)
                 is_valid = False
             
             if not isinstance(data.get("version"), str) or not data["version"]:
-                self.errors.append(f"[{plugin_name}] plugin.json 'version' must be a non-empty string")
+                error_msg = f"[{plugin_name}] plugin.json 'version' must be a non-empty string"
+                self.errors.append(error_msg)
+                self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)), 3)
                 is_valid = False
             
             if not isinstance(data.get("description"), str) or not data["description"]:
-                self.errors.append(f"[{plugin_name}] plugin.json 'description' must be a non-empty string")
+                error_msg = f"[{plugin_name}] plugin.json 'description' must be a non-empty string"
+                self.errors.append(error_msg)
+                self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)), 4)
                 is_valid = False
             
             # Validate optional fields
@@ -237,10 +263,14 @@ class PluginValidator:
             return is_valid
             
         except json.JSONDecodeError as e:
-            self.errors.append(f"[{plugin_name}] Invalid JSON in plugin.json: {e}")
+            error_msg = f"[{plugin_name}] Invalid JSON in plugin.json: {e}"
+            self.errors.append(error_msg)
+            self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)), getattr(e, 'lineno', 1))
             return False
         except Exception as e:
-            self.errors.append(f"[{plugin_name}] Error reading plugin.json: {e}")
+            error_msg = f"[{plugin_name}] Error reading plugin.json: {e}"
+            self.errors.append(error_msg)
+            self.github_error(error_msg, str(file_path.relative_to(self.plugins_dir.parent)))
             return False
     
     def validate_author_field(self, author: any, plugin_name: str) -> bool:
@@ -352,6 +382,49 @@ class PluginValidator:
                 print(f"  - {error}")
         else:
             print("\n✅ All plugins are valid!")
+        
+        # Generate GitHub Actions Job Summary
+        if self.is_github_actions:
+            self.generate_github_summary()
+    
+    def generate_github_summary(self):
+        """Generate a GitHub Actions job summary."""
+        summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+        if not summary_file:
+            return
+        
+        with open(summary_file, 'a') as f:
+            f.write("## 🔍 Plugin Schema Validation Results\n\n")
+            
+            if not self.errors:
+                f.write("### ✅ All Plugins Valid!\n\n")
+                f.write(f"Successfully validated **{len(self.validated_plugins)}** plugins.\n\n")
+            else:
+                f.write("### ❌ Validation Failed\n\n")
+                f.write(f"Found **{len(self.errors)}** error(s) in {len(self.validated_plugins)} plugins.\n\n")
+                
+                f.write("#### Errors\n\n")
+                f.write("| Plugin | Error |\n")
+                f.write("|--------|-------|\n")
+                for error in self.errors:
+                    # Extract plugin name and error message
+                    if error.startswith('['):
+                        plugin = error[1:error.index(']')]
+                        msg = error[error.index(']')+2:]
+                    else:
+                        plugin = "Unknown"
+                        msg = error
+                    f.write(f"| `{plugin}` | {msg} |\n")
+                f.write("\n")
+            
+            if self.warnings:
+                f.write("#### ⚠️ Warnings\n\n")
+                for warning in self.warnings:
+                    f.write(f"- {warning}\n")
+                f.write("\n")
+            
+            f.write("---\n")
+            f.write("*See [PLUGIN_SCHEMA.md](../PLUGIN_SCHEMA.md) for schema requirements.*\n")
 
 
 def main():
