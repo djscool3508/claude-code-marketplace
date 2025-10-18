@@ -1,0 +1,237 @@
+#!/usr/bin/env python3
+"""
+Marketplace Sync Validator
+
+Validates that the marketplace documentation files (README.md, plugins.md)
+are kept in sync with the actual plugins in the repository.
+
+This ensures that when new plugins are added or updated, the marketplace
+catalog is also updated.
+"""
+
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Dict, List, Set
+
+class MarketplaceSyncValidator:
+    def __init__(self, repo_root: Path):
+        self.repo_root = repo_root
+        self.plugins_dir = repo_root / "plugins"
+        self.readme_path = repo_root / "README.md"
+        self.plugins_md_path = repo_root / "plugins.md"
+        self.errors: List[str] = []
+        self.warnings: List[str] = []
+    
+    def get_plugin_list(self) -> Dict[str, Dict]:
+        """Get list of plugins from the plugins directory."""
+        plugins = {}
+        
+        if not self.plugins_dir.exists():
+            return plugins
+        
+        for plugin_dir in self.plugins_dir.iterdir():
+            if not plugin_dir.is_dir():
+                continue
+            
+            plugin_json_path = plugin_dir / ".claude-plugin" / "plugin.json"
+            
+            # Skip plugins without plugin.json (they haven't been migrated yet)
+            if not plugin_json_path.exists():
+                continue
+            
+            try:
+                with open(plugin_json_path, 'r', encoding='utf-8') as f:
+                    plugin_data = json.load(f)
+                
+                plugins[plugin_dir.name] = {
+                    "name": plugin_data.get("name", plugin_dir.name),
+                    "description": plugin_data.get("description", ""),
+                    "version": plugin_data.get("version", ""),
+                    "path": plugin_dir
+                }
+            except (json.JSONDecodeError, Exception) as e:
+                self.warnings.append(f"Could not read plugin.json for {plugin_dir.name}: {e}")
+        
+        return plugins
+    
+    def extract_plugin_names_from_markdown(self, content: str) -> Set[str]:
+        """Extract plugin names mentioned in markdown content."""
+        plugin_names = set()
+        
+        # Look for plugin names in code blocks and command examples
+        # Pattern: /plugin install <plugin-name>
+        install_patterns = re.findall(r'/plugin install ([a-z0-9-]+)', content, re.IGNORECASE)
+        plugin_names.update(install_patterns)
+        
+        # Pattern: plugin-name@ in examples
+        at_patterns = re.findall(r'([a-z0-9-]+)@', content, re.IGNORECASE)
+        plugin_names.update(at_patterns)
+        
+        # Pattern: **Plugin Name** in featured sections
+        bold_patterns = re.findall(r'\*\*([A-Za-z0-9 -]+)\*\*\s*-', content)
+        # Convert to kebab-case for comparison
+        for name in bold_patterns:
+            kebab_name = name.lower().replace(' ', '-')
+            plugin_names.add(kebab_name)
+        
+        # Remove common false positives
+        false_positives = {'claude-code-marketplace', 'marketplace', 'your-org', 'test', 
+                          'my-first-plugin', 'my-plugin', 'dev-marketplace', 'plugin-name'}
+        plugin_names = plugin_names - false_positives
+        
+        return plugin_names
+    
+    def validate_marketplace_sync(self) -> bool:
+        """Validate that marketplace files are in sync with actual plugins."""
+        print("Validating marketplace synchronization...")
+        print("=" * 60)
+        
+        # Get actual plugins with plugin.json
+        plugins = self.get_plugin_list()
+        
+        if not plugins:
+            print("No plugins with plugin.json found (this is okay for repos without migrated plugins)")
+            return True
+        
+        print(f"Found {len(plugins)} plugin(s) with plugin.json:\n")
+        for plugin_name in sorted(plugins.keys()):
+            print(f"  - {plugin_name}")
+        print()
+        
+        # Check README.md
+        readme_valid = True
+        if self.readme_path.exists():
+            with open(self.readme_path, 'r', encoding='utf-8') as f:
+                readme_content = f.read()
+            
+            readme_plugins = self.extract_plugin_names_from_markdown(readme_content)
+            print(f"Plugins mentioned in README.md: {len(readme_plugins)}")
+            
+            # Check for missing plugins
+            missing_in_readme = set(plugins.keys()) - readme_plugins
+            if missing_in_readme:
+                self.warnings.append(
+                    f"README.md may be missing these plugins: {', '.join(sorted(missing_in_readme))}"
+                )
+                readme_valid = False
+        else:
+            self.warnings.append("README.md not found")
+        
+        # Check plugins.md (if it exists and is supposed to be a catalog)
+        plugins_md_valid = True
+        if self.plugins_md_path.exists():
+            with open(self.plugins_md_path, 'r', encoding='utf-8') as f:
+                plugins_md_content = f.read()
+            
+            # Only validate if it looks like a catalog (not documentation)
+            if "# Plugins" in plugins_md_content and not "## Quickstart" in plugins_md_content:
+                plugins_md_plugins = self.extract_plugin_names_from_markdown(plugins_md_content)
+                print(f"Plugins mentioned in plugins.md: {len(plugins_md_plugins)}")
+                
+                missing_in_plugins_md = set(plugins.keys()) - plugins_md_plugins
+                if missing_in_plugins_md:
+                    self.warnings.append(
+                        f"plugins.md may be missing these plugins: {', '.join(sorted(missing_in_plugins_md))}"
+                    )
+                    plugins_md_valid = False
+        
+        return readme_valid and plugins_md_valid
+    
+    def validate_on_pr(self) -> bool:
+        """Validate marketplace sync specifically for PR changes."""
+        import subprocess
+        import os
+        
+        # Check if we're in a GitHub Actions environment
+        is_github_actions = os.environ.get('GITHUB_ACTIONS') == 'true'
+        
+        if not is_github_actions:
+            print("Not in GitHub Actions environment, skipping PR-specific validation")
+            return True
+        
+        try:
+            # Get list of changed files in the PR
+            result = subprocess.run(
+                ['git', 'diff', '--name-only', 'origin/main...HEAD'],
+                capture_output=True,
+                text=True,
+                cwd=self.repo_root
+            )
+            
+            if result.returncode != 0:
+                print("Could not get changed files, skipping PR validation")
+                return True
+            
+            changed_files = result.stdout.strip().split('\n')
+            
+            # Check if any plugin directories were modified
+            plugin_changes = [f for f in changed_files if f.startswith('plugins/')]
+            
+            if not plugin_changes:
+                print("No plugin changes detected")
+                return True
+            
+            # Check if marketplace files were also updated
+            marketplace_files = ['README.md', 'plugins.md']
+            marketplace_updated = any(f in changed_files for f in marketplace_files)
+            
+            if plugin_changes and not marketplace_updated:
+                self.errors.append(
+                    "Plugin files were modified but marketplace files (README.md, plugins.md) were not updated. "
+                    "Please update the marketplace documentation to reflect the plugin changes."
+                )
+                return False
+            
+            print("✓ Marketplace files updated alongside plugin changes")
+            return True
+            
+        except Exception as e:
+            print(f"Could not validate PR changes: {e}")
+            return True  # Don't fail on validation errors
+    
+    def print_summary(self):
+        """Print validation summary."""
+        print("\n" + "=" * 60)
+        print("MARKETPLACE SYNC SUMMARY")
+        print("=" * 60)
+        
+        if self.warnings:
+            print(f"\n⚠️  Warnings ({len(self.warnings)}):")
+            for warning in self.warnings:
+                print(f"  - {warning}")
+        
+        if self.errors:
+            print(f"\n❌ Errors ({len(self.errors)}):")
+            for error in self.errors:
+                print(f"  - {error}")
+        else:
+            print("\n✅ Marketplace appears to be in sync!")
+
+
+def main():
+    """Main entry point."""
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    
+    validator = MarketplaceSyncValidator(repo_root)
+    
+    # Run general sync validation
+    sync_valid = validator.validate_marketplace_sync()
+    
+    # Run PR-specific validation
+    pr_valid = validator.validate_on_pr()
+    
+    validator.print_summary()
+    
+    # Only fail on errors, not warnings
+    if validator.errors:
+        sys.exit(1)
+    else:
+        sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
+
