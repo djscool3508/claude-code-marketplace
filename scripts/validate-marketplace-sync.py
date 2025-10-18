@@ -183,29 +183,58 @@ class MarketplaceSyncValidator:
                 return True
             
             changed_files = result.stdout.strip().split('\n')
-            
-            # Check if any plugin directories were modified
-            plugin_changes = [f for f in changed_files if f.startswith('plugins/')]
-            
-            if not plugin_changes:
-                print("No plugin changes detected")
+            if not changed_files or changed_files == ['']:
+                print("No changed files detected")
                 return True
             
-            # Check if marketplace files were also updated
-            marketplace_files = ['README.md', 'plugins.md']
-            marketplace_updated = any(f in changed_files for f in marketplace_files)
+            # Check if new plugin directories were ADDED (not just modified)
+            # Get list of added files (A = added)
+            result_status = subprocess.run(
+                ['git', 'diff', '--name-status', 'origin/main...HEAD'],
+                capture_output=True,
+                text=True,
+                cwd=self.repo_root
+            )
             
-            if plugin_changes and not marketplace_updated:
+            if result_status.returncode != 0:
+                print("Could not get file status, skipping PR validation")
+                return True
+            
+            # Parse git diff output (format: "STATUS\tFILENAME")
+            new_plugin_dirs = set()
+            for line in result_status.stdout.strip().split('\n'):
+                if not line:
+                    continue
+                parts = line.split('\t')
+                if len(parts) < 2:
+                    continue
+                status, filepath = parts[0], parts[1]
+                
+                # Check if this is a new plugin.json file (indicates new plugin)
+                if status == 'A' and filepath.startswith('plugins/') and filepath.endswith('.claude-plugin/plugin.json'):
+                    # Extract plugin directory name (e.g., "plugins/my-plugin/")
+                    plugin_dir = filepath.split('/')[1]
+                    new_plugin_dirs.add(plugin_dir)
+            
+            if not new_plugin_dirs:
+                print("No new plugins added, skipping marketplace sync check")
+                return True
+            
+            print(f"New plugins detected: {', '.join(sorted(new_plugin_dirs))}")
+            
+            # Check if .claude-plugin/marketplace.json was updated
+            marketplace_json_updated = '.claude-plugin/marketplace.json' in changed_files
+            
+            if not marketplace_json_updated:
                 error_msg = (
-                    "Plugin files were modified but marketplace files (README.md, plugins.md) were not updated. "
-                    "Please update the marketplace documentation to reflect the plugin changes."
+                    f"New plugin(s) added ({', '.join(sorted(new_plugin_dirs))}) but .claude-plugin/marketplace.json was not updated. "
+                    "Please add the new plugin(s) to the marketplace.json file."
                 )
                 self.errors.append(error_msg)
-                self.github_error(error_msg, "README.md")
-                self.github_error("Consider updating plugins.md as well", "plugins.md")
+                self.github_error(error_msg, ".claude-plugin/marketplace.json")
                 return False
             
-            print("✓ Marketplace files updated alongside plugin changes")
+            print("✓ Marketplace.json updated for new plugins")
             return True
             
         except Exception as e:
